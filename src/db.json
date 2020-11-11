@@ -1,0 +1,23 @@
+{
+    "user": [
+        {
+            "id_user": 0,
+            "username": "",
+            "password": "1234"
+        }
+    ],
+    "categories": [
+        {
+            "categoria 0": [
+                {
+                    "id_tarefa": 0,
+                    "id_user": 0,
+                    "data_inicio": "11/11/2020",
+                    "prazo": "25/12/2020",
+                    "descricao": "",
+                    "outros": ""
+                }
+            ]
+        }
+    ]
+}
