@@ -25,7 +25,7 @@ export class AppComponent{
       this.category = data;
     });
 
-    console.log(this.)
+    // console.log(this.)
     
   }
 
