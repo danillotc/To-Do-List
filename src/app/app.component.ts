@@ -15,7 +15,7 @@ import { Category } from './models/category.model';
 
 export class AppComponent{
 
-  public category: Category;
+  category: Category;
 
   constructor(private taskControl: TaskControlService) {}
  
@@ -23,9 +23,9 @@ export class AppComponent{
 
     this.taskControl.carregarCategorias().subscribe((data: Category)=>{
       this.category = data;
+      console.log(this.category)
     });
 
-    // console.log(this.)
     
   }
 

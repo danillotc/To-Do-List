@@ -8,14 +8,20 @@
     ],
     "categories": [
         {
-            "categoria 0": [
+            "categoria0": [
                 {
-                    "id_tarefa": 0,
-                    "id_user": 0,
-                    "data_inicio": "11/11/2020",
-                    "prazo": "25/12/2020",
-                    "descricao": "",
-                    "outros": ""
+                    "nome_categoria":"Minha primeira categoria",
+                    "tarefas": [
+                        {
+                            "id_tarefa": 0,
+                            "id_user": 0,
+                            "nome_tarefa": "Criar novas categorias",
+                            "data_inicio": "11/11/2020",
+                            "prazo": "25/12/2020",
+                            "descricao": "",
+                            "outros": ""
+                        }
+                    ]
                 }
             ]
         }
