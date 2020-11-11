@@ -1,5 +1,5 @@
 export interface Category {
-    id: number,
-    name: string,
-    task: any[]
+    id_user: number,
+    username: string,
+    task: []
 }
