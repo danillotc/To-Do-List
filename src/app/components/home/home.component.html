@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
 
     <div *ngFor="let listaCategoria of listaCategorias">
 
@@ -6,10 +6,71 @@
         <div *ngFor="let item of category">
             <h3 *ngIf="item.nome_categoria == listaCategoria">{{item.nome_tarefa}}</h3>
         </div>
-        
+
     </div>
 
+</div> -->
+
+<div>
+    <div *ngFor="let listaCategoria of listaCategorias">
+
+        <div *ngFor="let item of category">
+
+            <div class="example-container">
+                <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="listaCategoria"
+                    [cdkDropListConnectedTo]="[doneList]" class="example-list" (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" cdkDrag>
+                        <h1 *ngIf="item.nome_categoria == listaCategoria">{{listaCategoria}}</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-container">
+                <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="item.nome_tarefa"
+                    [cdkDropListConnectedTo]="[todoList]" class="example-list" (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" cdkDrag>
+                        <h3 *ngIf="item.nome_categoria == listaCategoria">{{item.nome_tarefa}}</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
 </div>
+
+<!-- <div>
+
+    <div *ngFor="let listaCategoria of listaCategorias">
+
+        <div *ngFor="let item of category">
+            <div *ngIf="item.nome_categoria == listaCategoria">
+
+                <div class="example-container">
+                    <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="listaCategoria"
+                        [cdkDropListConnectedTo]="[doneList]" class="example-list" (cdkDropListDropped)="drop($event)">
+                        <div class="example-box"cdkDrag><h1>{{listaCategoria}}</h1></div>
+                    </div>
+                </div>
+
+                <div class="example-container">
+                    <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="item.nome_tarefa"
+                        [cdkDropListConnectedTo]="[todoList]" class="example-list" (cdkDropListDropped)="drop($event)">
+                        <div class="example-box" cdkDrag><h3>{{item.nome_tarefa}}</h3></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div> -->
+
+
+<hr>
 
 Categoria: <input type="text" id="nomeCategoria" [(ngModel)]="newCategory.nome_categoria"><br>
 Tarefa: <input type="text" id="nomeTarefa" [(ngModel)]="newCategory.nome_tarefa"><br>

@@ -5,7 +5,7 @@ import { Category } from '../models/category.model';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
-import * as $ from 'jquery';
+import * as $ from 'jquery'
 
 @Injectable()
 
@@ -39,8 +39,6 @@ export class TaskControlService {
 
   criarCategorias(categoria: Category): Observable<Category>{
 
-    console.log(categoria)
-    
     return this.http.post<Category>(this.url + '/tarefas', categoria ,this.options)
     .pipe(
       retry(1),
