@@ -1,0 +1,22 @@
+<div>
+
+    <div *ngFor="let listaCategoria of listaCategorias">
+
+        <h1>{{listaCategoria}}</h1>
+
+        <div *ngFor="let item of category">
+            <h3 *ngIf="item.nome_categoria == listaCategoria">{{item.nome_tarefa}}</h3>
+        </div>
+
+    </div>
+
+</div>
+
+<input type="text" id="nomeCategoria" value="Teste"><br>
+<input type="text" id="nomeTarefa" value="Teste"><br>
+<input type="date" id="dataInicio" value="2020-12-12"><br>
+<input type="date" id="dataFim" value="2020-12-12"><br>
+<input type="text" id="descricao" value="teste"><br>
+<input type="text" id="outros" value=""><br>
+
+<button (click)="criarCategorias()">Adicionar</button>

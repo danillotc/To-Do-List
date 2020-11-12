@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Category } from '../models/category.model';
 import { Observable } from 'rxjs';
 
+import * as $ from 'jquery';
 
 @Injectable()
 
@@ -21,8 +22,22 @@ export class TaskControlService {
 
   carregarCategorias(): Observable<Category>{
 
-    return this.http.get<Category>(this.url + '/categories', this.options);
+    return this.http.get<Category>(this.url + '/tarefas', this.options);
 
   }
+
+  criarCategorias(categoria:Category){
+
+    $.post(this.url+ '/tarefas', categoria)
+
+  }
+
+  // criarCategorias(categoria: Category): Observable<Category>{
+
+  //   console.log(categoria)
+    
+  //   return this.http.post<Category>(this.url + '/tarefas', JSON.stringify(categoria) ,this.options);
+
+  // }
 
 }

@@ -1,10 +1,13 @@
-export interface Category {
-    id_tarefa: number,
+export interface Category {    
+
+    id: number,
+    nome_categoria: string,
+
     id_user: number,
-    username: string,
     nome_tarefa: string,
     data_inicio: string,
     prazo: string,
     descricao: string,
     outros: string
+
 }

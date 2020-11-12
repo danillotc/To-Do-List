@@ -1,29 +1,71 @@
 {
-    "user": [
-        {
-            "id_user": 0,
-            "username": "",
-            "password": "1234"
-        }
-    ],
-    "categories": [
-        {
-            "categoria0": [
-                {
-                    "nome_categoria":"Minha primeira categoria",
-                    "tarefas": [
-                        {
-                            "id_tarefa": 0,
-                            "id_user": 0,
-                            "nome_tarefa": "Criar novas categorias",
-                            "data_inicio": "11/11/2020",
-                            "prazo": "25/12/2020",
-                            "descricao": "",
-                            "outros": ""
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
+  "user": [
+    {
+      "id": 0,
+      "username": "",
+      "password": "1234"
+    }
+  ],
+  "tarefas": [
+    {
+      "id_user": "1",
+      "nome_categoria": "Teste",
+      "nome_tarefa": "TesteTarefa",
+      "data_inicio": "2020-12-12",
+      "prazo": "2020-12-12",
+      "descricao": "teste",
+      "outros": "",
+      "id": 1
+    },
+    {
+      "id_user": "1",
+      "nome_categoria": "Opa",
+      "nome_tarefa": "Um mais um",
+      "data_inicio": "2020-12-12",
+      "prazo": "2020-12-12",
+      "descricao": "teste",
+      "outros": "",
+      "id": 2
+    },
+    {
+      "id_user": "1",
+      "nome_categoria": "dsadasd",
+      "nome_tarefa": "Testeasdasd",
+      "data_inicio": "2020-12-12",
+      "prazo": "2020-12-12",
+      "descricao": "teste",
+      "outros": "",
+      "id": 3
+    },
+    {
+      "id_user": "1",
+      "nome_categoria": "Falar com danilo",
+      "nome_tarefa": "Eae moço",
+      "data_inicio": "2020-12-12",
+      "prazo": "2020-12-12",
+      "descricao": "teste",
+      "outros": "",
+      "id": 4
+    },
+    {
+      "id_user": "1",
+      "nome_categoria": "Falar com danilo",
+      "nome_tarefa": "Teste",
+      "data_inicio": "2020-12-12",
+      "prazo": "2020-12-12",
+      "descricao": "teste",
+      "outros": "",
+      "id": 5
+    },
+    {
+      "id_user": "1",
+      "nome_categoria": "Opa",
+      "nome_tarefa": "Teste",
+      "data_inicio": "2020-12-12",
+      "prazo": "2020-12-12",
+      "descricao": "teste",
+      "outros": "",
+      "id": 6
+    }
+  ]
 }
