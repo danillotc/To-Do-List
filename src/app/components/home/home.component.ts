@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
         if(this.listaCategorias.includes(this.category[i].nome_categoria) != true){
           this.listaCategorias.push(this.category[i].nome_categoria)
         }
-        
+
       }
 
     });
@@ -48,6 +48,8 @@ export class HomeComponent implements OnInit {
     this.newCategory.outros = $('#outros').val();
     
     this.taskControl.criarCategorias(this.newCategory);
+
+    location.reload();
 
   }
 
