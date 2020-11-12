@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Category } from '../models/category.model';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { retry, catchError } from 'rxjs/operators';
 
 import * as $ from 'jquery';
 
@@ -22,22 +23,43 @@ export class TaskControlService {
 
   carregarCategorias(): Observable<Category>{
 
-    return this.http.get<Category>(this.url + '/tarefas', this.options);
+    return this.http.get<Category>(this.url + '/tarefas', this.options)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
 
   }
 
-  criarCategorias(categoria:Category){
+  // criarCategorias(categoria:Category){
 
-    $.post(this.url+ '/tarefas', categoria)
-
-  }
-
-  // criarCategorias(categoria: Category): Observable<Category>{
-
-  //   console.log(categoria)
-    
-  //   return this.http.post<Category>(this.url + '/tarefas', JSON.stringify(categoria) ,this.options);
+  //   $.post(this.url+ '/tarefas', categoria)
 
   // }
+
+  criarCategorias(categoria: Category): Observable<Category>{
+
+    console.log(categoria)
+    
+    return this.http.post<Category>(this.url + '/tarefas', categoria ,this.options)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+
+  }
+
+  handleError(error){
+    let errorMessage = '';
+
+    if(error.error instanceof ErrorEvent){
+      errorMessage = error.error.message;
+    }else{
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`
+    }
+
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+  }
 
 }
