@@ -16,7 +16,6 @@ import { EditComponent } from '../edit/edit.component';
 })
 export class DragDropComponent implements OnInit {
 
-
   category;
   newCategory = {} as Category;
   listaCategorias = [];
@@ -66,6 +65,7 @@ export class DragDropComponent implements OnInit {
 
     dialogConfig.disableClose = true;
     dialogConfig.data = this.category[id-2];
+    dialogConfig.width = '500px';
 
     this.modalEdit.open(EditComponent, dialogConfig)
   }

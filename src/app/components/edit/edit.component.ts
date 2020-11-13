@@ -28,6 +28,9 @@ export class EditComponent implements OnInit {
     private taskControl: TaskControlService) {
     this.nome_tarefa = data.nome_tarefa;
     this.nome_categoria = data.nome_categoria;
+    this.descricao = data.descricao;
+    this.data_inicio = data.data_inicio;
+    this.data_final = data.prazo;
   }
 
   ngOnInit(): void {

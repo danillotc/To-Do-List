@@ -4,7 +4,7 @@
 
 <form>
             
-    <mat-form-field class="example-form-field">
+    <mat-form-field class="example-form-field example-full-width">
         <mat-label>Categoria</mat-label>
 
         <mat-select [(value)]="nome_categoria">
@@ -16,7 +16,7 @@
 
     <br>
 
-    <mat-form-field>
+    <mat-form-field class="example-full-width">
         <input matInput type="text" placeholder="Nome da tarefa" value="{{nome_tarefa}}">
         <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>close</mat-icon>
@@ -26,8 +26,8 @@
     <br>
 
 
-    <mat-form-field>
-        <textarea matInput type="text" placeholder="Descrição" value="{{descricao}}"> </textarea>
+    <mat-form-field class="example-full-width">
+        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" style="overflow-y: hidden;" type="text" placeholder="Descrição" value="{{descricao}}"> </textarea>
         <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>close</mat-icon>
         </button>
@@ -36,7 +36,7 @@
     <br>
 
 
-    <mat-form-field>
+    <mat-form-field class="example-full-width">
         <input matInput type="date" placeholder="Data de início" value="{{data_inicio}}">
         <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>close</mat-icon>
@@ -46,7 +46,7 @@
     <br>
 
 
-    <mat-form-field>
+    <mat-form-field class="example-full-width">
         <input matInput type="date" placeholder="Data final" value="{{data_final}}">
         <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>close</mat-icon>
