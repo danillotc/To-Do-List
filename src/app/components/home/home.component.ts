@@ -16,8 +16,14 @@ export class HomeComponent implements OnInit {
     this.notificacoes.push('oi')
   }
 
-  abrirModalAdd() {
+  abrirModalAdd(id) {
+
+    if(id == 1){
+      document.getElementById('btnModal').click()
+    }
+
     const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '500px';
     dialogConfig.disableClose = true;
 
     this.modalAdd.open(AddComponent, dialogConfig)

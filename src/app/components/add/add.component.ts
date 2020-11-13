@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialogConfig, MatDialog } from "@angular/material/dialog";
 import { FormGroup } from '@angular/forms';
 import { TaskControlService } from '../../services/task-control.service';
 import { Category } from '../../models/category.model';
@@ -26,7 +26,8 @@ export class AddComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<AddComponent>,
     @Inject(MAT_DIALOG_DATA) data,
-    private taskControl: TaskControlService) {
+    private taskControl: TaskControlService,
+    private modalAdd: MatDialog) {
     this.category = data;
   }
 

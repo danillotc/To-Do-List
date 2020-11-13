@@ -11,7 +11,7 @@
             </a>
             <a mat-list-item routerLink="/dashboard">
                 <mat-icon class="icon">add</mat-icon>
-                <span class="label" (click)="abrirModalAdd()">Adicionar tarefa</span>
+                <span class="label" (click)="abrirModalAdd(1)">Adicionar tarefa</span>
             </a>
             <a mat-list-item routerLink="/">
                 <mat-icon class="icon">input</mat-icon>
@@ -22,13 +22,13 @@
 
     <mat-sidenav-content>
         <mat-toolbar color="primary">
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+            <button mat-icon-button id="btnModal" class="example-icon" aria-label="Example icon-button with menu icon"
                 (click)="sideNav.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
             <span>Task Manager</span>
             <span class="example-spacer"></span>
-            <button (click)="adicionarNotificacoes()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <button (click)="abrirModalAdd(2)" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
                 <mat-icon>add</mat-icon>
             </button>
             <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">

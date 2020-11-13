@@ -5,11 +5,11 @@
 
 <form>
             
-    <mat-form-field class="example-form-field">
+    <mat-form-field class="example-form-field example-full-width" color="accent">
         <mat-label>Categoria</mat-label>
 
         <mat-select [(value)]="nome_categoria">
-            <mat-option *ngFor="let categories of categoriesList" value="{{categories}}" >
+            <mat-option *ngFor="let categories of categoriesList" value="{{categories}}">
                 {{categories}}
             </mat-option>
         </mat-select>
@@ -17,8 +17,8 @@
 
     <br>
 
-    <mat-form-field>
-        <input matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="nome_tarefa">
+    <mat-form-field class="example-full-width" color="accent">
+        <input matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa">
         <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>close</mat-icon>
         </button>
@@ -27,8 +27,8 @@
     <br>
 
 
-    <mat-form-field>
-        <textarea matInput type="text" placeholder="Descrição" [(ngModel)]="descricao"> </textarea>
+    <mat-form-field class="example-full-width" color="accent">
+        <textarea matInput type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao"> </textarea>
         <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>close</mat-icon>
         </button>
@@ -37,8 +37,8 @@
     <br>
 
 
-    <mat-form-field>
-        <input matInput type="date" placeholder="Data de início" [(ngModel)]="data_inicio">
+    <mat-form-field class="example-full-width" color="accent">
+        <input matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio">
         <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>close</mat-icon>
         </button>
@@ -47,8 +47,8 @@
     <br>
 
 
-    <mat-form-field>
-        <input matInput type="date" placeholder="Data final" [(ngModel)]="data_final">
+    <mat-form-field class="example-full-width" color="accent">
+        <input matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo">
         <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>close</mat-icon>
         </button>
