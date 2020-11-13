@@ -1,9 +1,9 @@
 <h1 mat-dialog-title>
-    Edição de tarefa
+    Criação de tarefa
 </h1>
 
 <mat-form-field class="example-form-field">
-    <mat-label>Alterar categoria</mat-label>
+    <mat-label>Categoria</mat-label>
 
     <mat-select>
         <mat-option *ngFor="let categories of categoriesList" [value]="categories">
@@ -21,6 +21,6 @@
 </mat-form-field>
 
 <mat-dialog-actions>
-    <button class="mat    sed-button mat-primary" (click)="salvar()">Salvar</button>
+    <button class="mat    sed-button mat-primary" (click)="criar()">Criar tarefa</button>
     <button class="mat    sed-button" (click)="fechar()">Cancelar</button>
 </mat-dialog-actions>

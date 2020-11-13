@@ -5,18 +5,18 @@ import { TaskControlService } from '../../services/task-control.service';
 import { Category } from '../../models/category.model';
 
 @Component({
-  selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  selector: 'app-add',
+  templateUrl: './add.component.html',
+  styleUrls: ['./add.component.css']
 })
-export class EditComponent implements OnInit {
+export class AddComponent implements OnInit {
 
   form: FormGroup;
   category;
   categoriesList = [];
 
   constructor(
-    private dialogRef: MatDialogRef<EditComponent>,
+    private dialogRef: MatDialogRef<AddComponent>,
     @Inject(MAT_DIALOG_DATA) data,
     private taskControl: TaskControlService) {
     this.category = data;
@@ -44,7 +44,8 @@ export class EditComponent implements OnInit {
     this.dialogRef.close()
   }
 
-  salvar() {
+  criar() {
+    console.log(this.category)
     this.fechar();
   }
 
