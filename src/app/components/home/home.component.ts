@@ -9,6 +9,10 @@ export class HomeComponent implements OnInit {
 
   notificacoes = ['Uma nova tarefa foi criada!'];
 
+  adicionarNotificacoes(){
+    this.notificacoes.push('oi')
+  }
+
   constructor() { }
 
   ngOnInit() {

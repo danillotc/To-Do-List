@@ -28,7 +28,7 @@
             </button>
             <span>Task Manager</span>
             <span class="example-spacer"></span>
-            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <button (click)="adicionarNotificacoes()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
                 <mat-icon>add</mat-icon>
             </button>
             <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
@@ -39,7 +39,6 @@
         <main>
             <app-drag-drop></app-drag-drop>
         </main>
-
     </mat-sidenav-content>
 
 </mat-sidenav-container>
