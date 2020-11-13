@@ -1,0 +1,10 @@
+.mat-dialog-actions {
+    justify-content: space-around;
+    padding: 8px 0;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 52px;
+    align-items: center;
+    box-sizing: content-box;
+    margin-bottom: -24px;
+}
