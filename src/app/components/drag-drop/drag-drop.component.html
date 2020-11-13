@@ -1,8 +1,8 @@
 
 <div class="row dragDropBody">
-    <div class="col-md-4" *ngFor="let listaCategoria of listaCategorias">
+    <div class="col-xl-4" *ngFor="let listaCategoria of listaCategorias">
 
-        <h1 class="text-center categoria">{{listaCategoria}}</h1>
+        <h1 class="text-center categoria col-xl-12">{{listaCategoria}}</h1>
 
         <div cdkDropList (cdkDropListDropped)="drop($event)">
             <div cdkDrag *ngFor="let item of category">
