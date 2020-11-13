@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './modules/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HomeComponent,
     LoginComponent,
     DragDropComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

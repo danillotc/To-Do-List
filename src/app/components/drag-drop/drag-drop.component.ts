@@ -6,6 +6,9 @@ import { Category } from '../../models/category.model';
 
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { EditComponent } from '../edit/edit.component';
+
 @Component({
   selector: 'app-drag-drop',
   templateUrl: './drag-drop.component.html',
@@ -56,7 +59,16 @@ export class DragDropComponent implements OnInit {
     moveItemInArray(this.category, event.previousIndex, event.currentIndex);
   }
 
-  constructor(private taskControl: TaskControlService) { }
+  constructor(private taskControl: TaskControlService, private modalEdit: MatDialog) { }
+
+  abrirModalEdit(id) {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.data = this.category[id-1];
+
+    this.modalEdit.open(EditComponent, dialogConfig)
+  }
 
   ngOnInit() {
 

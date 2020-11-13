@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>
+    Edição de tarefa
+</h1>
+
+<mat-dialog-content [form-group]="form">
+    <mat-form-field>
+        <input matInput
+            value="{{ category.nome_tarefa }}">
+    </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button mat-primary" (click)="salvar()">Salvar</button>
+    <button class="mat-raised-button" (click)="fechar()">Cancelar</button>
+</mat-dialog-actions>

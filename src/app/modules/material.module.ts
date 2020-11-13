@@ -8,6 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import {MatBadgeModule} from '@angular/material/badge';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import {MatBadgeModule} from '@angular/material/badge';
         MatListModule,
         MatButtonModule,
         MatButtonToggleModule,
-        MatBadgeModule
+        MatBadgeModule,
+        MatDialogModule
     ],
     exports: [
         DragDropModule,
@@ -28,7 +30,8 @@ import {MatBadgeModule} from '@angular/material/badge';
         MatListModule,
         MatButtonModule,
         MatButtonToggleModule,
-        MatBadgeModule
+        MatBadgeModule,
+        MatDialogModule
     ]
 })
 
