@@ -44,10 +44,12 @@ export class DragDropComponent implements OnInit {
   }
 
   apagarCategoria(id) {
-    this.taskControl.excluirCategoria(id).subscribe((data) => {
-      console.log(data);
-    });
-    location.reload();
+    if(window.confirm('Quer mesmo excluir esta tarefa?')) {
+      this.taskControl.excluirCategoria(id).subscribe((data) => {
+        console.log(data);
+      });
+      location.reload();
+    }
   }
 
   drop(event: CdkDragDrop<string[]>) {
