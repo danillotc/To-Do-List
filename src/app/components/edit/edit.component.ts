@@ -59,7 +59,6 @@ export class EditComponent implements OnInit {
   }
 
   salvar() {
-    console.log(this.category);
     this.fechar();
   }
 

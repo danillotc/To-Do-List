@@ -2,25 +2,62 @@
     Criação de tarefa
 </h1>
 
-<mat-form-field class="example-form-field">
-    <mat-label>Categoria</mat-label>
 
-    <mat-select>
-        <mat-option *ngFor="let categories of categoriesList" [value]="categories">
-            {{categories}}
-        </mat-option>
-    </mat-select>
-</mat-form-field>
-<br>
+<form>
+            
+    <mat-form-field class="example-form-field">
+        <mat-label>Categoria</mat-label>
 
-<mat-form-field>
-    <input matInput type="text" placeholder="Nome da tarefa">
-    <button mat-button matSuffix mat-icon-button aria-label="Clear">
-        <mat-icon>close</mat-icon>
-    </button>
-</mat-form-field>
+        <mat-select [(value)]="nome_categoria">
+            <mat-option *ngFor="let categories of categoriesList" value="{{categories}}" >
+                {{categories}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
 
-<mat-dialog-actions>
-    <button class="mat    sed-button mat-primary" (click)="criar()">Criar tarefa</button>
-    <button class="mat    sed-button" (click)="fechar()">Cancelar</button>
-</mat-dialog-actions>
+    <br>
+
+    <mat-form-field>
+        <input matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="nome_tarefa">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <br>
+
+
+    <mat-form-field>
+        <textarea matInput type="text" placeholder="Descrição" [(ngModel)]="descricao"> </textarea>
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <br>
+
+
+    <mat-form-field>
+        <input matInput type="date" placeholder="Data de início" [(ngModel)]="data_inicio">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <br>
+
+
+    <mat-form-field>
+        <input matInput type="date" placeholder="Data final" [(ngModel)]="data_final">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+
+    <mat-dialog-actions>
+        <button class="mat-raised-button mat-primary" (click)="criarCategorias()">Criar tarefa</button>
+        <button class="mat-raised-button" (click)="fechar()">Cancelar</button>
+    </mat-dialog-actions>
+    
+</form>
