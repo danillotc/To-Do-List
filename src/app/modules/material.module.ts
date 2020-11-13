@@ -10,6 +10,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ import { MatInputModule } from '@angular/material/input';
         MatButtonToggleModule,
         MatBadgeModule,
         MatDialogModule,
-        MatInputModule
+        MatInputModule,
+        MatSelectModule
     ],
     exports: [
         DragDropModule,
@@ -34,7 +36,8 @@ import { MatInputModule } from '@angular/material/input';
         MatButtonToggleModule,
         MatBadgeModule,
         MatDialogModule,
-        MatInputModule
+        MatInputModule,
+        MatSelectModule
     ]
 })
 
