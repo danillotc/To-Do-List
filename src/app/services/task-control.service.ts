@@ -39,6 +39,22 @@ export class TaskControlService {
 
   }
 
+  atualizarCategoria(id, categoria: Category): Observable<Category>{
+    return this.http.put<Category>(this.url + '/tarefas/' + id, JSON.stringify(categoria), this.options)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  excluirCategoria(id) {
+    return this.http.delete<Category>(this.url + '/tarefas/' + id, this.options)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
   handleError(error){
     let errorMessage = '';
 
