@@ -16,3 +16,7 @@ body {
 .mat-drawer-container {
   min-height: 667px !important;
 }
+/* 
+*:focus{
+  outline: 1px solid black;
+} */
