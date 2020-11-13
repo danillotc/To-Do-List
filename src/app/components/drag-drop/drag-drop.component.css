@@ -51,6 +51,8 @@
   font: 400 16px/28px Roboto, "Helvetica Neue", sans-serif;
   letter-spacing: normal;
   margin: 0 !important;
+  min-width: 300px;
+  max-width: 301px;
 }
 
 .dragDropBody{
