@@ -14,6 +14,14 @@ export class AddComponent implements OnInit {
   form: FormGroup;
   category;
   categoriesList = [];
+  newCategory = {} as Category;
+
+  nome_tarefa;
+  nome_categoria;
+  descricao;
+  data_inicio;
+  data_final;
+  selected;
 
   constructor(
     private dialogRef: MatDialogRef<AddComponent>,
@@ -44,9 +52,11 @@ export class AddComponent implements OnInit {
     this.dialogRef.close()
   }
 
-  criar() {
-    console.log(this.category)
-    this.fechar();
+  criarCategorias() {
+    this.taskControl.criarCategorias(this.newCategory).subscribe((data) => {
+      console.log(data);
+    });
+    location.reload();
   }
 
 }
