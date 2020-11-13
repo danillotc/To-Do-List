@@ -4,7 +4,7 @@ import { TaskControlService } from '../../services/task-control.service';
 
 import { Category } from '../../models/category.model';
 
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-drag-drop',
@@ -12,7 +12,6 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
   styleUrls: ['./drag-drop.component.css']
 })
 export class DragDropComponent implements OnInit {
-
 
   category;
   newCategory = {} as Category;
