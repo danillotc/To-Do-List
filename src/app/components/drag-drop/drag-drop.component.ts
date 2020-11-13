@@ -43,6 +43,13 @@ export class DragDropComponent implements OnInit {
     location.reload();
   }
 
+  apagarCategoria(id) {
+    this.taskControl.excluirCategoria(id).subscribe((data) => {
+      console.log(data);
+    });
+    location.reload();
+  }
+
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.category, event.previousIndex, event.currentIndex);
   }

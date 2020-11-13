@@ -28,11 +28,6 @@
     },
     {
       "nome_categoria": "Terça-Feira",
-      "nome_tarefa": "Cozinhar",
-      "id": 4
-    },
-    {
-      "nome_categoria": "Terça-Feira",
       "nome_tarefa": "Estudar",
       "id": 5
     },
