@@ -65,7 +65,7 @@ export class DragDropComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
-    dialogConfig.data = this.category[id-1];
+    dialogConfig.data = this.category[id-2];
 
     this.modalEdit.open(EditComponent, dialogConfig)
   }

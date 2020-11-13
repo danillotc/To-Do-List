@@ -15,20 +15,39 @@ export class EditComponent implements OnInit {
   category;
   categoriesList = [];
 
+  nome_tarefa;
+  nome_categoria;
+  descricao;
+  data_inicio;
+  data_final;
+  selected;
+
   constructor(
     private dialogRef: MatDialogRef<EditComponent>,
     @Inject(MAT_DIALOG_DATA) data,
     private taskControl: TaskControlService) {
+<<<<<<< HEAD
     this.category = data;
+=======
+    this.nome_tarefa = data.nome_tarefa;
+    this.nome_categoria = data.nome_categoria;
+>>>>>>> 08ebc6a8ca7c56aa9aa7592ed64d4de834c074a7
   }
 
   ngOnInit(): void {
     this.pegarCategorias();
+
+    console.log(this.category)
+
   }
 
   pegarCategorias() {
     this.taskControl.carregarCategorias().subscribe((data: Category) => {
       this.category = data;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 08ebc6a8ca7c56aa9aa7592ed64d4de834c074a7
       try {
         for (let i = 0; i < 300; i++) {
           if (this.categoriesList.includes(this.category[i].nome_categoria) != true) {
@@ -45,6 +64,10 @@ export class EditComponent implements OnInit {
   }
 
   salvar() {
+<<<<<<< HEAD
+=======
+    console.log(this.category);
+>>>>>>> 08ebc6a8ca7c56aa9aa7592ed64d4de834c074a7
     this.fechar();
   }
 
