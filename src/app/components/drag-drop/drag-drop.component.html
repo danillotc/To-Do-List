@@ -1,0 +1,38 @@
+
+<div class="row dragDropBody">
+    <div class="col-md-4" *ngFor="let listaCategoria of listaCategorias">
+
+        <h1 class="text-center categoria">{{listaCategoria}}</h1>
+
+        <div cdkDropList (cdkDropListDropped)="drop($event)">
+            <div cdkDrag *ngFor="let item of category">
+                <div class="example-list" *ngIf="listaCategoria == item.nome_categoria">
+                    <div class="example-box">
+                        <h3>{{item.nome_tarefa}}</h3>
+                        <div class="icones">
+                            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                                <mat-icon>create</mat-icon>
+                            </button>
+                            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<hr>
+
+<!-- Categoria: <input type="text" id="nomeCategoria" [(ngModel)]="newCategory.nome_categoria"><br>
+Tarefa: <input type="text" id="nomeTarefa" [(ngModel)]="newCategory.nome_tarefa"><br>
+Data Início: <input type="date" id="dataInicio" [(ngModel)]="newCategory.data_inicio"><br>
+Data Fim: <input type="date" id="dataFim" [(ngModel)]="newCategory.prazo"><br>
+Descrição: <input type="text" id="descricao" [(ngModel)]="newCategory.descricao"><br>
+Outros: <input type="text" id="outros" [(ngModel)]="newCategory.outros"><br>
+
+<button (click)="criarCategorias()">Adicionar</button> -->

@@ -5,8 +5,6 @@ import { Category } from '../models/category.model';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
-import * as $ from 'jquery'
-
 @Injectable()
 
 export class TaskControlService {
@@ -30,12 +28,6 @@ export class TaskControlService {
     );
 
   }
-
-  // criarCategorias(categoria:Category){
-
-  //   $.post(this.url+ '/tarefas', categoria)
-
-  // }
 
   criarCategorias(categoria: Category): Observable<Category>{
 

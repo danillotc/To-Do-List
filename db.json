@@ -8,8 +8,8 @@
   ],
   "tarefas": [
     {
-      "nome_categoria": "teste",
-      "nome_tarefa": "teste",
+      "nome_categoria": "Minha primeira categoria",
+      "nome_tarefa": "Criar novas categorias",
       "descricao": "dsadasd",
       "data_inicio": "2001-04-15",
       "prazo": "2001-04-15",
@@ -17,39 +17,34 @@
       "id": 1
     },
     {
-      "nome_categoria": "teste",
-      "nome_tarefa": "sadasdsad",
+      "nome_categoria": "Segunda-Feira",
+      "nome_tarefa": "Andar",
       "id": 2
     },
     {
-      "nome_categoria": "sadasd",
-      "nome_tarefa": "sadas",
+      "nome_categoria": "Terça-Feira",
+      "nome_tarefa": "Comer",
       "id": 3
     },
     {
-      "nome_categoria": "teste",
-      "nome_tarefa": "sadas",
+      "nome_categoria": "Terça-Feira",
+      "nome_tarefa": "Cozinhar",
       "id": 4
     },
     {
-      "nome_categoria": "dsad",
-      "nome_tarefa": "dsadsa",
+      "nome_categoria": "Terça-Feira",
+      "nome_tarefa": "Estudar",
       "id": 5
     },
     {
-      "nome_categoria": "teste",
-      "nome_tarefa": "dsadsadsadasdasdasdasdsa",
+      "nome_categoria": "Terça-Feira",
+      "nome_tarefa": "Programar como será a apresentação",
       "id": 6
     },
     {
-      "nome_categoria": "dsad",
-      "nome_tarefa": "ola",
+      "nome_categoria": "Segunda-Feira",
+      "nome_tarefa": "Falar com o Célio sobre algumas dúvidas da aula",
       "id": 7
-    },
-    {
-      "nome_categoria": "dsad",
-      "nome_tarefa": "sadasdsad",
-      "id": 8
     }
   ]
 }
