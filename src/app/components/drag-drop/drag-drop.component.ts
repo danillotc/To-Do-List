@@ -17,7 +17,6 @@ import { EditComponent } from '../edit/edit.component';
 export class DragDropComponent implements OnInit {
 
   category;
-  newCategory = {} as Category;
   listaCategorias = [];
 
   pegarCategorias() {
@@ -38,12 +37,6 @@ export class DragDropComponent implements OnInit {
 
   }
 
-  criarCategorias() {
-    this.taskControl.criarCategorias(this.newCategory).subscribe((data) => {
-      console.log(data);
-    });
-    location.reload();
-  }
 
   apagarCategoria(id) {
     if(window.confirm('Quer mesmo excluir esta tarefa?')) {

@@ -8,7 +8,7 @@
     <mat-form-field class="example-form-field example-full-width" color="accent">
         <mat-label>Categoria</mat-label>
 
-        <mat-select [(value)]="nome_categoria">
+        <mat-select [(value)]="newCategory.nome_categoria">
             <mat-option *ngFor="let categories of categoriesList" value="{{categories}}">
                 {{categories}}
             </mat-option>
@@ -18,7 +18,7 @@
     <br>
 
     <mat-form-field class="example-full-width" color="accent">
-        <input matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa">
+        <input matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa" name="nome_tarefa">
         <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>close</mat-icon>
         </button>
@@ -28,7 +28,7 @@
 
 
     <mat-form-field class="example-full-width" color="accent">
-        <textarea matInput type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao"> </textarea>
+        <textarea matInput type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao" name="descricao"> </textarea>
         <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>close</mat-icon>
         </button>
@@ -38,7 +38,7 @@
 
 
     <mat-form-field class="example-full-width" color="accent">
-        <input matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio">
+        <input matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio" name="data_inicio">
         <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>close</mat-icon>
         </button>
@@ -48,11 +48,21 @@
 
 
     <mat-form-field class="example-full-width" color="accent">
-        <input matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo">
+        <input matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
         <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>close</mat-icon>
         </button>
     </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" color="accent">
+        <textarea matInput type="text" placeholder="Anotações" [(ngModel)]="newCategory.outros" name="outros"> </textarea>
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <br>
 
 
     <mat-dialog-actions>

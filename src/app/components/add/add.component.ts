@@ -14,21 +14,21 @@ export class AddComponent implements OnInit {
   form: FormGroup;
   category;
   categoriesList = [];
-  newCategory = {} as Category;
-
-  nome_tarefa;
-  nome_categoria;
-  descricao;
-  data_inicio;
-  data_final;
-  selected;
+  newCategory: Category = {
+    id: 0,
+    id_user: 0,
+    nome_categoria: "",
+    nome_tarefa: "",
+    data_inicio: "",
+    prazo: "",
+    descricao: "",
+    outros: ""
+  };
 
   constructor(
     private dialogRef: MatDialogRef<AddComponent>,
-    @Inject(MAT_DIALOG_DATA) data,
     private taskControl: TaskControlService,
     private modalAdd: MatDialog) {
-    this.category = data;
   }
 
   ngOnInit(): void {
@@ -55,7 +55,7 @@ export class AddComponent implements OnInit {
 
   criarCategorias() {
     this.taskControl.criarCategorias(this.newCategory).subscribe((data) => {
-      console.log(data);
+      console.log();
     });
     location.reload();
   }
