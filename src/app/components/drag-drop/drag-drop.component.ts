@@ -38,13 +38,6 @@ export class DragDropComponent implements OnInit {
 
   }
 
-  criarCategorias() {
-    this.taskControl.criarCategorias(this.newCategory).subscribe((data) => {
-      console.log(data);
-    });
-    location.reload();
-  }
-
   apagarCategoria(id) {
     if(window.confirm('Quer mesmo excluir esta tarefa?')) {
       this.taskControl.excluirCategoria(id).subscribe((data) => {
