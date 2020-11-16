@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormGroup } from '@angular/forms';
-
 import { Router } from '@angular/router';
+
+import { User } from '../../models/user.model';
+import { TaskControlService } from '../../services/task-control.service';
+
 
 @Component({
   selector: 'app-login',
@@ -11,13 +14,30 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  user = {} as User;
+  listaUsuarios;
+
+  constructor(
+    private taskControl: TaskControlService,
+    private router: Router
+    ) {
+      this.user.id=0;
+      this.user.username='';
+      this.user.password='';
+     }
 
   ngOnInit(): void {
+    this.pegarUsuarios();
+  }
+  
+  pegarUsuarios() {
+    this.taskControl.carregarUsuarios().subscribe((data) => {
+      this.listaUsuarios = data;
+    });
   }
 
   login() {
-    this.router.navigate(['/home'])
+    // this.router.navigate(['/home'])
   }
 
 }
