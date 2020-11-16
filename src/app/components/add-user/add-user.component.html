@@ -1,0 +1,18 @@
+<h1>Criar usuário</h1>
+
+<form>
+    <mat-form-field color="accent" class="example-form-field example-full-width">
+        <mat-label>Usuário</mat-label>
+        <input name="username" autocomplete="off" matInput [(ngModel)]="newUser.username">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field color="accent" class="example-form-field example-full-width">
+        <mat-label>Senha</mat-label>
+        <input type="password" name="senha" autocomplete="off" matInput [(ngModel)]="newUser.password">
+    </mat-form-field>
+    <br><br>
+
+    <button mat-raised-button color="primary" (click)="criarUsuario()">Criar usuário</button>
+    <button mat-stroked-button color="basic" (click)="fechar()">Cancelar</button>
+</form>

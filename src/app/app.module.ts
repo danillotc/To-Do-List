@@ -20,6 +20,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ToastrModule } from 'ngx-toastr';
 
 import { FiltroPipe } from './pipe/filtro.pipe';
+import { AddUserComponent } from './components/add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FiltroPipe } from './pipe/filtro.pipe';
     EditComponent,
     AddComponent,
     FiltroPipe,
+    AddUserComponent,
   ],
   imports: [
     BrowserModule,

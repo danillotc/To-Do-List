@@ -14,20 +14,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
-    imports: [
-        DragDropModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatSidenavModule,
-        MatListModule,
-        MatButtonModule,
-        MatButtonToggleModule,
-        MatBadgeModule,
-        MatDialogModule,
-        MatInputModule,
-        MatSelectModule,
-        MatGridListModule
-    ],
     exports: [
         DragDropModule,
         MatToolbarModule,
