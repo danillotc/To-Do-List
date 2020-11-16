@@ -76,8 +76,7 @@ export class TaskControlService {
       )
   }
 
-  criarUsuario(usuario: User): Observable<User>{
-   
+  criarUsuario(usuario: User): Observable<User>{   
     return this.http.post<User>(this.url + '/user', usuario, this.options)
     .pipe(
       retry(1),

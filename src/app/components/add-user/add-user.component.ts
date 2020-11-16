@@ -14,6 +14,7 @@ import { TaskControlService } from '../../services/task-control.service';
 export class AddUserComponent implements OnInit {
 
   newUser = {} as User;
+  userId = document.cookie.split('token=')[1];
 
   constructor(
     private dialogRef: MatDialogRef<AddUserComponent>,
@@ -29,7 +30,17 @@ export class AddUserComponent implements OnInit {
   }
 
   criarUsuario() {
-    this.taskService.criarUsuario(this.newUser).subscribe(data=>console.log());
+    this.taskService.criarUsuario(this.newUser).subscribe(data=>{
+      this.taskService.criarCategorias({
+        id_user: this.userId,
+        "nome_categoria": "Minha primeira categoria",
+        "nome_tarefa": "Criar minha primeria tarefa",
+        "descricao": "Tenho que criar minha primeira tarefa",
+        "data_inicio": "2015-01-12",
+        "prazo": "2015-02-12",
+        "status": false
+      }).subscribe(data=>console.log())
+    });
     this.toastr.success("Usuario " + this.newUser.username + " criado com sucesso!");
     location.reload();
   }
