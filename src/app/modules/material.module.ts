@@ -12,6 +12,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { A11yModule } from '@angular/cdk/a11y';
 
 @NgModule({
     exports: [
@@ -26,7 +28,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
         MatDialogModule,
         MatInputModule,
         MatSelectModule,
-        MatGridListModule
+        MatGridListModule,
+        MatSlideToggleModule,
+        A11yModule
     ]
 })
 

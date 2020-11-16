@@ -7,15 +7,15 @@
 
         <div cdkDropList (cdkDropListDropped)="drop($event)">
             <div cdkDrag *ngFor="let item of category">
-                <div class="example-list" *ngIf="listaCategoria == item.nome_categoria">
+                <div class="example-list" (dblclick)="abrirModalDetalhes(item.id)" *ngIf="listaCategoria == item.nome_categoria">
                     <div class="example-box">
                         <h3>{{item.nome_tarefa}}</h3>
                         <div class="icones">
                             <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="abrirModalEdit(item.id)">
-                                <mat-icon>create</mat-icon>
+                                <mat-icon aria-label="Botão para editar tarefa">create</mat-icon>
                             </button>
                             <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="apagarCategoria(item.id)">
-                                <mat-icon>delete</mat-icon>
+                                <mat-icon aria-label="Botão de deletar tarefa">delete</mat-icon>
                             </button>
                         </div>
                     </div>

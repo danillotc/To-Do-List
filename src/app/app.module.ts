@@ -21,6 +21,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { FiltroPipe } from './pipe/filtro.pipe';
 import { AddUserComponent } from './components/add-user/add-user.component';
+import { DetalhesComponent } from './components/detalhes/detalhes.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
     AddComponent,
     FiltroPipe,
     AddUserComponent,
+    DetalhesComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
     MaterialModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [TaskControlService],
   bootstrap: [AppComponent],

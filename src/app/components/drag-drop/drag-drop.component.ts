@@ -9,6 +9,7 @@ import { EditComponent } from '../edit/edit.component';
 
 import { ToastrService } from 'ngx-toastr';
 import { TaskControlService } from '../../services/task-control.service';
+import { DetalhesComponent } from '../detalhes/detalhes.component';
 
 @Component({
   selector: 'app-drag-drop',
@@ -60,6 +61,14 @@ export class DragDropComponent implements OnInit {
     dialogConfig.data = this.category[id];
     dialogConfig.width = '500px';
     this.modalEdit.open(EditComponent, dialogConfig)
+  }
+
+  abrirModalDetalhes(id) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.data = this.category[id];
+    dialogConfig.width = '500px';
+    this.modalEdit.open(DetalhesComponent, dialogConfig)
   }
 
   ngOnInit() {

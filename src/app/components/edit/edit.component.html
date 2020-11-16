@@ -7,7 +7,7 @@
     <mat-form-field color="accent" class="example-form-field example-full-width">
         <mat-label>Categoria</mat-label>
 
-        <mat-select [(value)]="newCategory.nome_categoria">
+        <mat-select [(value)]="newCategory.nome_categoria" aria-label="Caixa de seleção para escolher categorias">
             <mat-option *ngFor="let categories of categoriesList" value="{{categories}}" >
                 {{categories}}
             </mat-option>
@@ -17,34 +17,28 @@
     <br>
 
     <mat-form-field color="accent" class="example-full-width">
-        <input autocomplete="off" matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa" name="tarefa">
+        <input aria-label="Caixa de texto para editar nome da tarefa" autocomplete="off" matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa" name="tarefa">
+    </mat-form-field>
+
+    <mat-form-field color="accent" class="example-full-width">
+        <textarea aria-label="Caixa de texto para editar descrição" autocomplete="off" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" style="overflow-y: hidden;" type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao" name="descricao"> </textarea>
     </mat-form-field>
 
     <br>
 
-
     <mat-form-field color="accent" class="example-full-width">
-        <textarea autocomplete="off" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" style="overflow-y: hidden;" type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao" name="descricao"> </textarea>
+        <input aria-label="Calendário para editar Data de início" matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio" name="data_inicio">
     </mat-form-field>
 
     <br>
 
-
     <mat-form-field color="accent" class="example-full-width">
-        <input matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio" name="data_inicio">
+        <input aria-label="Calendário para editar Data final" matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
     </mat-form-field>
-
-    <br>
-
-
-    <mat-form-field color="accent" class="example-full-width">
-        <input matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
-    </mat-form-field>
-
 
     <mat-dialog-actions>
-        <button class="mat-raised-button mat-primary" (click)="salvar(newCategory.id)">Salvar</button>
-        <button class="mat-raised-button" (click)="fechar()">Cancelar</button>
+        <button aria-label="Botão para salvar alterações" class="mat-raised-button mat-primary" (click)="salvar(newCategory.id)">Salvar</button>
+        <button aria-label="Botão para cancelar edição" class="mat-raised-button" (click)="fechar()">Cancelar</button>
     </mat-dialog-actions>
     
 </form>
