@@ -8,89 +8,35 @@
   ],
   "tarefas": [
     {
+      "nome_categoria": "hidd3n_c4tegory123456",
+      "nome_tarefa": "Primeira",
+      "id": 0
+    },
+    {
+      "id": 1,
+      "nome_tarefa": "olocosadasd",
+      "nome_categoria": "teste"
+    },
+    {
+      "id": 2,
+      "nome_tarefa": "tchau",
       "nome_categoria": "Minha primeira categoria",
-      "nome_tarefa": "Criar novas categorias",
-      "descricao": "dsadasd",
-      "data_inicio": "2001-04-15",
-      "prazo": "2001-04-15",
-      "outros": "sadas",
-      "id": 1
+      "descricao": "asdsadasd"
     },
     {
-      "nome_categoria": "Segunda-Feira",
-      "nome_tarefa": "Andar",
-      "id": 2
+      "id": 3,
+      "nome_tarefa": "Minha primeira tarefa",
+      "nome_categoria": "Minha primeira categoria"
     },
     {
-      "nome_categoria": "Terça-Feira",
-      "nome_tarefa": "Comer",
-      "id": 3
-    },
-    {
-      "nome_categoria": "Terça-Feira",
-      "nome_tarefa": "Estudar",
-      "id": 5
-    },
-    {
-      "nome_categoria": "Terça-Feira",
-      "nome_tarefa": "Programar como será a apresentação",
-      "id": 6
-    },
-    {
+      "nome_tarefa": "Minha segunda categoria",
       "nome_categoria": "Minha primeira categoria",
-      "nome_tarefa": "TEste",
-      "id": 7
+      "id": 4
     },
     {
-      "nome_categoria": "Segunda-Feira",
-      "nome_tarefa": "dasd",
-      "id": 8
-    },
-    {
-      "nome_categoria": "jajajajaja",
-      "nome_tarefa": "ajjajajaja",
-      "data_inicio": "2020-11-04",
-      "prazo": "2020-11-19",
-      "descricao": "sadasdasd ftyguiwfhfui ahuif hasdiuf asiudlfh iulsadhf ausid hfuiashdfiuashdflasidfhia sfdashfiuasdfds",
-      "outros": "sdfsdf sd",
-      "id": 9
-    },
-    {
-      "nome_categoria": "jajajajaja",
-      "nome_tarefa": "adasdasdasd",
-      "descricao": "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-      "id": 10
-    },
-    {
-      "nome_categoria": "dasd",
-      "nome_tarefa": "asdsad",
-      "data_inicio": "165165-08-21",
-      "prazo": "275760-05-04",
-      "descricao": "sdaas65das4d654sad 5as4 d65sa",
-      "id": 11
-    },
-    {
-      "nome_categoria": "dsadsa",
-      "nome_tarefa": "dsadasd",
-      "data_inicio": "275760-04-23",
-      "prazo": "275760-03-04",
-      "descricao": "4324234",
-      "id": 12
-    },
-    {
-      "nome_categoria": "Terça-Feira",
-      "nome_tarefa": "sadasdsad",
-      "data_inicio": "275760-03-21",
-      "prazo": "34234-02-04",
-      "descricao": "32423",
-      "outros": "23423",
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "id": 15
+      "id": 5,
+      "nome_tarefa": "Minha terceira tarefa",
+      "nome_categoria": "teste"
     }
   ]
 }

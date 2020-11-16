@@ -7,7 +7,7 @@
     <mat-form-field color="accent" class="example-form-field example-full-width">
         <mat-label>Categoria</mat-label>
 
-        <mat-select [(value)]="nome_categoria">
+        <mat-select [(value)]="newCategory.nome_categoria">
             <mat-option *ngFor="let categories of categoriesList" value="{{categories}}" >
                 {{categories}}
             </mat-option>
@@ -17,45 +17,33 @@
     <br>
 
     <mat-form-field color="accent" class="example-full-width">
-        <input matInput type="text" placeholder="Nome da tarefa" value="{{nome_tarefa}}">
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-            <mat-icon>close</mat-icon>
-        </button>
+        <input matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa" name="tarefa">
     </mat-form-field>
 
     <br>
 
 
     <mat-form-field color="accent" class="example-full-width">
-        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" style="overflow-y: hidden;" type="text" placeholder="Descrição" value="{{descricao}}"> </textarea>
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-            <mat-icon>close</mat-icon>
-        </button>
+        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" style="overflow-y: hidden;" type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao" name="descricao"> </textarea>
     </mat-form-field>
 
     <br>
 
 
     <mat-form-field color="accent" class="example-full-width">
-        <input matInput type="date" placeholder="Data de início" value="{{data_inicio}}">
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-            <mat-icon>close</mat-icon>
-        </button>
+        <input matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio" name="data_inicio">
     </mat-form-field>
 
     <br>
 
 
     <mat-form-field color="accent" class="example-full-width">
-        <input matInput type="date" placeholder="Data final" value="{{data_final}}">
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-            <mat-icon>close</mat-icon>
-        </button>
+        <input matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
     </mat-form-field>
 
 
     <mat-dialog-actions>
-        <button class="mat-raised-button mat-primary" (click)="salvar()">Salvar</button>
+        <button class="mat-raised-button mat-primary" (click)="salvar(newCategory.id)">Salvar</button>
         <button class="mat-raised-button" (click)="fechar()">Cancelar</button>
     </mat-dialog-actions>
     

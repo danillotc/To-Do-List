@@ -17,7 +17,6 @@ import { EditComponent } from '../edit/edit.component';
 export class DragDropComponent implements OnInit {
 
   category;
-  newCategory = {} as Category;
   listaCategorias = [];
 
   pegarCategorias() {
@@ -27,7 +26,7 @@ export class DragDropComponent implements OnInit {
 
       try{
         for (let i = 0; i < 300; i++) {
-          if (this.listaCategorias.includes(this.category[i].nome_categoria) != true) {
+          if (this.listaCategorias.includes(this.category[i].nome_categoria) != true && this.category[i].nome_categoria != 'hidd3n_c4tegory123456') {
             this.listaCategorias.push(this.category[i].nome_categoria)
           }
         }
@@ -57,7 +56,7 @@ export class DragDropComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
-    dialogConfig.data = this.category[id-2];
+    dialogConfig.data = this.category[id];
     dialogConfig.width = '500px';
 
     this.modalEdit.open(EditComponent, dialogConfig)

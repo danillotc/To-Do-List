@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { EditComponent } from './components/edit/edit.component';
 import { AddComponent } from './components/add/add.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AddComponent } from './components/add/add.component';
     FormsModule,
     MaterialModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ToastrModule.forRoot()
   ],
   providers: [TaskControlService],
   bootstrap: [AppComponent],

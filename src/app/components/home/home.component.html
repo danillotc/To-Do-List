@@ -5,10 +5,6 @@
             <a mat-list-item type="button">
                 <span class="title">Task Manager</span>
             </a>
-            <a mat-list-item routerLink="/home">
-                <mat-icon class="icon">home</mat-icon>
-                <span class="label">Home</span>
-            </a>
             <a mat-list-item routerLink="/dashboard">
                 <mat-icon class="icon">add</mat-icon>
                 <span class="label" (click)="abrirModalAdd(1)">Adicionar tarefa</span>
@@ -28,14 +24,7 @@
             </button>
             <span>Task Manager</span>
             <span class="example-spacer"></span>
-            <button (click)="abrirModalAdd(2)" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-                <mat-icon>add</mat-icon>
-            </button>
-            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-                <mat-icon matBadge="{{notificacoes.length}}" matBadgeColor="accent">message</mat-icon>
-            </button>
         </mat-toolbar>
-
         <main>
             <app-drag-drop></app-drag-drop>
         </main>

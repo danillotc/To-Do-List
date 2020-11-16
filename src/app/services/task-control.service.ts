@@ -39,8 +39,8 @@ export class TaskControlService {
 
   }
 
-  atualizarCategoria(id, categoria: Category): Observable<Category>{
-    return this.http.put<Category>(this.url + '/tarefas/' + id, JSON.stringify(categoria), this.options)
+  atualizarCategoria(id, categoria): Observable<Category>{
+    return this.http.put<Category>(this.url + '/tarefas/' + id, categoria, this.options)
     .pipe(
       retry(1),
       catchError(this.handleError)
