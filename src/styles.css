@@ -16,3 +16,16 @@ body {
 .mat-drawer-container {
   min-height: 667px !important;
 }
+
+.example-list {
+  min-height: 35px !important;
+  max-height: 45px !important;
+}
+
+.example-box{
+  padding: 0 !important;
+}
+
+.cdk-drag{
+  margin-bottom: 5px !important;
+}

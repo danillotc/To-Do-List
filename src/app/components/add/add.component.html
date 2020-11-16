@@ -17,39 +17,39 @@
     </mat-form-field>
 
     <mat-form-field *ngIf="select.value == 'Nova categoria'" class="example-full-width" color="accent" >
-        <input matInput type="text" placeholder="Nome da categoria" [(ngModel)]="newCategory.nome_categoria" name="nome_categoria">
+        <input autocomplete="off" matInput type="text" placeholder="Nome da categoria" [(ngModel)]="newCategory.nome_categoria" name="nome_categoria">
     </mat-form-field>
 
     <br>
 
     <mat-form-field class="example-full-width" color="accent">
-        <input matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa" name="nome_tarefa">
-    </mat-form-field>
-
-    <br>
-
-
-    <mat-form-field class="example-full-width" color="accent">
-        <textarea matInput type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao" name="descricao"> </textarea>
+        <input autocomplete="off" matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa" name="nome_tarefa">
     </mat-form-field>
 
     <br>
 
 
     <mat-form-field class="example-full-width" color="accent">
-        <input matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio" name="data_inicio">
+        <textarea autocomplete="off" matInput type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao" name="descricao"> </textarea>
     </mat-form-field>
 
     <br>
 
 
     <mat-form-field class="example-full-width" color="accent">
-        <input matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
+        <input autocomplete="off" matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio" name="data_inicio">
+    </mat-form-field>
+
+    <br>
+
+
+    <mat-form-field class="example-full-width" color="accent">
+        <input autocomplete="off" matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
     </mat-form-field>
 
 
     <mat-form-field class="example-full-width" color="accent">
-        <textarea matInput type="text" placeholder="Anotações" [(ngModel)]="newCategory.outros" name="outros"> </textarea>
+        <textarea autocomplete="off" matInput type="text" placeholder="Anotações" [(ngModel)]="newCategory.outros" name="outros"> </textarea>
     </mat-form-field>
 
     <br>

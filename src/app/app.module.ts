@@ -6,17 +6,20 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { DragDropComponent } from './components/drag-drop/drag-drop.component';
-
-import { TaskControlService } from './services/task-control.service';
+import { EditComponent } from './components/edit/edit.component';
+import { AddComponent } from './components/add/add.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+
+import { TaskControlService } from './services/task-control.service';
+
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './modules/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { EditComponent } from './components/edit/edit.component';
-import { AddComponent } from './components/add/add.component';
 import { ToastrModule } from 'ngx-toastr';
+
+import { FiltroPipe } from './pipe/filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { ToastrModule } from 'ngx-toastr';
     DragDropComponent,
     EditComponent,
     AddComponent,
+    FiltroPipe,
   ],
   imports: [
     BrowserModule,

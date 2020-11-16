@@ -17,14 +17,14 @@
     <br>
 
     <mat-form-field color="accent" class="example-full-width">
-        <input matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa" name="tarefa">
+        <input autocomplete="off" matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa" name="tarefa">
     </mat-form-field>
 
     <br>
 
 
     <mat-form-field color="accent" class="example-full-width">
-        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" style="overflow-y: hidden;" type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao" name="descricao"> </textarea>
+        <textarea autocomplete="off" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" style="overflow-y: hidden;" type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao" name="descricao"> </textarea>
     </mat-form-field>
 
     <br>

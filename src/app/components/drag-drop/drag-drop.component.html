@@ -1,6 +1,7 @@
 
 <div class="row dragDropBody">
-    <div class="col-xl-4" *ngFor="let listaCategoria of listaCategorias">
+
+    <div class="col-xl-4" *ngFor="let listaCategoria of listaCategorias | filtro: filtroCategoria">
 
         <h1 class="text-center categoria col-xl-12">{{listaCategoria}}</h1>
 
