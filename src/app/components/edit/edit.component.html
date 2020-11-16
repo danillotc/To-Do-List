@@ -20,8 +20,6 @@
         <input aria-label="Caixa de texto para editar nome da tarefa" autocomplete="off" matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa" name="tarefa">
     </mat-form-field>
 
-    <br>
-
     <mat-form-field color="accent" class="example-full-width">
         <textarea aria-label="Caixa de texto para editar descrição" autocomplete="off" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" style="overflow-y: hidden;" type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao" name="descricao"> </textarea>
     </mat-form-field>

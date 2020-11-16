@@ -40,15 +40,10 @@
       "id": 5
     },
     {
+      "nome_categoria": "Danilo",
       "nome_tarefa": "teste1",
       "descricao": "sadsadsadas",
-      "nome_categoria": "Danilo",
       "id": 6
-    },
-    {
-      "nome_tarefa": "sadasdas",
-      "nome_categoria": "Oloco",
-      "id": 7
     }
   ]
 }

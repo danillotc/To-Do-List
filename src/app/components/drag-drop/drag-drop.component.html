@@ -7,7 +7,7 @@
 
         <div cdkDropList (cdkDropListDropped)="drop($event)">
             <div cdkDrag *ngFor="let item of category">
-                <div class="example-list" *ngIf="listaCategoria == item.nome_categoria">
+                <div class="example-list" (dblclick)="abrirModalDetalhes(item.id)" *ngIf="listaCategoria == item.nome_categoria">
                     <div class="example-box">
                         <h3>{{item.nome_tarefa}}</h3>
                         <div class="icones">

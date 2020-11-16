@@ -20,55 +20,60 @@ export class HomeComponent implements OnInit {
   mudarContraste() {
     setTimeout(() => {
 
-      if (this.isChecked) {
-        document.querySelectorAll('h1').forEach(element => {
-          element.style.color = 'yellow';
-        })
-        document.querySelectorAll('h2').forEach(element => {
-          element.style.color = 'orange';
-        })
-        document.querySelectorAll('input').forEach(element => {
-          element.style.color = 'yellow';
-        })
-        document.querySelectorAll('span').forEach(element => {
-          element.style.color = 'yellow';
-        })
-
-        $('mat-icon').css('color', 'black');
-
-        document.getElementById('menu').style.color = 'yellow';
-
-        $('.mat-toolbar.mat-primary').css({
-          'box-shadow': '#ffff',
-          'background': 'black',
-          'color': '#fff'
-        })
-
-      } else {
-        document.querySelectorAll('h1').forEach(element => {
-          element.style.color = 'white';
-        })
-        document.querySelectorAll('h2').forEach(element => {
-          element.style.color = 'white';
-        })
-        document.querySelectorAll('input').forEach(element => {
-          element.style.color = 'white';
-        })
-        document.querySelectorAll('span').forEach(element => {
-          element.style.color = 'white';
-        })
-        
-        document.getElementById('menu').style.color = 'white';
-
-        $('#adicionarTarefa').css('color', 'white');
-        $('#btnSair').css('color', 'white');
-        $('.mat-toolbar.mat-primary').css({
-          'box-shadow': '#ffff',
-          'background': '#c2185b',
-          'color': 'white'
-        })
-      }
-
+      setInterval(()=>{
+        if (this.isChecked) {
+          document.querySelectorAll('h1').forEach(element => {
+            element.style.color = 'yellow';
+          })
+          document.querySelectorAll('h2').forEach(element => {
+            element.style.color = 'yellow';
+          })
+          document.querySelectorAll('input').forEach(element => {
+            element.style.color = 'yellow';
+          })
+          document.querySelectorAll('span').forEach(element => {
+            element.style.color = 'yellow';
+          })
+          document.querySelectorAll('textarea').forEach(element => {
+            element.style.color = 'yellow';
+          })
+          $('mat-icon').css('color', 'black');
+          $('#btnSair').css('color', 'white');
+          
+          document.getElementById('menu').style.color = 'yellow';
+  
+          $('.mat-toolbar.mat-primary').css({
+            'box-shadow': '#ffff',
+            'background': 'black',
+            'color': '#fff'
+          })
+        } else {
+          document.querySelectorAll('h1').forEach(element => {
+            element.style.color = '';
+          })
+          document.querySelectorAll('h2').forEach(element => {
+            element.style.color = '';
+          })
+          document.querySelectorAll('input').forEach(element => {
+            element.style.color = '';
+          })
+          document.querySelectorAll('span').forEach(element => {
+            element.style.color = '';
+          })
+          document.querySelectorAll('textarea').forEach(element => {
+            element.style.color = '';
+          })
+          document.getElementById('menu').style.color = 'white';
+  
+          $('#adicionarTarefa').css('color', '');
+          $('#btnSair').css('color', '');
+          $('.mat-toolbar.mat-primary').css({
+            'box-shadow': '#ffff',
+            'background': '#c2185b',
+            'color': 'white'
+          })
+        }
+      },200)
     }, 200);
   }
 
