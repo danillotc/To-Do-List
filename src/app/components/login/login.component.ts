@@ -6,6 +6,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { User } from '../../models/user.model';
 import { TaskControlService } from '../../services/task-control.service';
 import { AddUserComponent } from '../../components/add-user/add-user.component';
+import { ForgotComponent } from '../../components/forgot/forgot.component';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -72,6 +73,8 @@ export class LoginComponent implements OnInit {
   }
 
   abrirModalEsqueci() {
-    alert("Eita tristeza :/")
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    this.modalAdd.open(ForgotComponent, dialogConfig)
   }
 }

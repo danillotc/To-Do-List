@@ -1,0 +1,20 @@
+<h1>Recuperar senha</h1>
+
+<form>
+    <h3>Entre com seu usuário</h3>
+
+    <mat-form-field color="accent" class="example-form-field example-full-width">
+        <mat-label>Usuário</mat-label>
+        <input name="username" autocomplete="off" matInput [(ngModel)]="usuario">
+    </mat-form-field>
+    <br>
+    
+    <mat-form-field appearance="outline" class="example-form-field example-full-width senha" *ngIf="senha">
+        <mat-label> Sua senha é: {{ senha }} </mat-label>
+        <input readonly name="senha" matInput>
+    </mat-form-field>
+    <br><br>
+
+    <button mat-raised-button color="primary" (click)="recuperarSenha()">Recuperar senha</button>
+    <button mat-stroked-button color="basic" (click)="fechar()">Cancelar</button>
+</form>

@@ -2,7 +2,8 @@
   "user": [
     {
       "id": 0,
-      "username": "hidd3n_usu4ario123456"
+      "username": "",
+      "password": "1234"
     },
     {
       "id": 1,
@@ -23,6 +24,11 @@
       "username": "outroteste",
       "password": "outroteste",
       "id": 4
+    },
+    {
+      "username": "testador",
+      "password": "testador",
+      "id": 5
     }
   ],
   "tarefas": [
@@ -40,9 +46,9 @@
       "prazo": "2020-11-19"
     },
     {
-      "id": 2,
+      "nome_categoria": "Oloco",
       "nome_tarefa": "teste",
-      "nome_categoria": "Danilo"
+      "id": 2
     },
     {
       "nome_categoria": "oi",
@@ -50,14 +56,22 @@
       "id": 3
     },
     {
+      "id": 4,
+      "nome_tarefa": "teste",
+      "nome_categoria": "oi"
+    },
+    {
       "nome_categoria": "Danilo",
       "nome_tarefa": "Comer",
       "id": 5
     },
     {
-      "nome_categoria": "Danilo",
-      "nome_tarefa": "teste1",
-      "descricao": "sadsadsadas",
+      "nome_categoria": "Teste",
+      "nome_tarefa": "testar",
+      "descricao": "testando",
+      "data_inicio": "2020-11-02",
+      "prazo": "2020-11-28",
+      "outros": "Só um teste",
       "id": 6
     }
   ]
