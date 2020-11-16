@@ -22,6 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { FiltroPipe, FiltroTarefas } from './pipe/filtro.pipe';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { DetalhesComponent } from './components/detalhes/detalhes.component';
+import { ForgotComponent } from './components/forgot/forgot.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { DetalhesComponent } from './components/detalhes/detalhes.component';
     FiltroPipe,
     AddUserComponent,
     DetalhesComponent,
+    ForgotComponent,
     FiltroTarefas
   ],
   imports: [

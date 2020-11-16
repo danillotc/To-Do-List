@@ -6,6 +6,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { User } from '../../models/user.model';
 import { TaskControlService } from '../../services/task-control.service';
 import { AddUserComponent } from '../../components/add-user/add-user.component';
+import { ForgotComponent } from '../../components/forgot/forgot.component';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -43,17 +44,8 @@ export class LoginComponent implements OnInit {
 
   login() {
 
-    // for(let data of this.listaUsuarios) {
-    //   if (data.username == this.user.username && data.password == this.user.password) {
-    //     this.toastr.success("Login realizado com sucesso")
-    //   } 
-    //   else {
-    //     this.toastr.error("Usuário ou senha inválidos")
-    //   }
-    // }
-
     if (this.listaUsuarios.find(user => user.username === this.user.username)) {
-      if (this.listaUsuarios.find(user => user.password === this.user.password)) {
+      if (this.listaUsuarios.find(user => user.username === this.user.username && user.password === this.user.password)) {
         let token = this.listaUsuarios.findIndex(user => user.password === this.user.password);
         document.cookie=`token = ${​​token}​​`;
         this.router.navigate(['/home'])
@@ -72,6 +64,8 @@ export class LoginComponent implements OnInit {
   }
 
   abrirModalEsqueci() {
-    alert("Eita tristeza :/")
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    this.modalAdd.open(ForgotComponent, dialogConfig)
   }
 }
