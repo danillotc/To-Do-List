@@ -1,0 +1,14 @@
+h1,input,span,#menu{
+    color: yellow !important;
+}
+
+span mat-icon{
+    color: black;
+}
+
+
+.mat-toolbar.mat-primary {
+    box-shadow: #ffff;
+    background: black;
+    color: #fff;
+}

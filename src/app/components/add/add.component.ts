@@ -20,7 +20,6 @@ export class AddComponent implements OnInit {
   constructor(
       private dialogRef: MatDialogRef<AddComponent>,
       private taskControl: TaskControlService,
-      private modalAdd: MatDialog,
       private toastr: ToastrService
     ) {
   }

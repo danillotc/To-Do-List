@@ -3,12 +3,12 @@
 </h1>
 
 
-<form>
+<form (ngSubmit)="criarCategorias(select.value)" ngNativeValidate>
             
     <mat-form-field class="example-form-field example-full-width" color="accent">
         <mat-label>Categoria</mat-label>
 
-        <mat-select #select>
+        <mat-select #select required>
             <mat-option *ngFor="let categories of categoriesList" value="{{categories}}">
                 {{categories}}
             </mat-option>
@@ -17,17 +17,16 @@
     </mat-form-field>
 
     <mat-form-field *ngIf="select.value == 'Nova categoria'" class="example-full-width" color="accent" >
-        <input autocomplete="off" matInput type="text" placeholder="Nome da categoria" [(ngModel)]="newCategory.nome_categoria" name="nome_categoria">
+        <input required autocomplete="off" matInput type="text" placeholder="Nome da categoria" [(ngModel)]="newCategory.nome_categoria" name="nome_categoria">
     </mat-form-field>
 
     <br>
 
     <mat-form-field class="example-full-width" color="accent">
-        <input autocomplete="off" matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa" name="nome_tarefa">
+        <input required autocomplete="off" matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa" name="nome_tarefa">
     </mat-form-field>
 
     <br>
-
 
     <mat-form-field class="example-full-width" color="accent">
         <textarea autocomplete="off" matInput type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao" name="descricao"> </textarea>
@@ -35,13 +34,11 @@
 
     <br>
 
-
     <mat-form-field class="example-full-width" color="accent">
         <input autocomplete="off" matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio" name="data_inicio">
     </mat-form-field>
 
     <br>
-
 
     <mat-form-field class="example-full-width" color="accent">
         <input autocomplete="off" matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
@@ -54,10 +51,10 @@
 
     <br>
 
-
     <mat-dialog-actions>
-        <button class="mat-raised-button mat-primary" (click)="criarCategorias(select.value)">Criar tarefa</button>
+        <button class="mat-raised-button mat-primary" type="submit">Criar tarefa</button>
         <button class="mat-raised-button" id="closeButton" (click)="fechar()">Cancelar</button>
     </mat-dialog-actions>
     
 </form>
+<!-- (click)="criarCategorias(select.value)" -->

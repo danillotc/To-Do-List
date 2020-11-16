@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 
 import { TaskControlService } from './services/task-control.service';
 
-import { User } from './models/user.model';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
