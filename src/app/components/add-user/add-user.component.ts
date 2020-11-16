@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User } from '../../models/user.model';
 import { MatDialogRef } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
+
+import { User } from '../../models/user.model';
 import { TaskControlService } from '../../services/task-control.service';
 
 @Component({
@@ -15,7 +17,8 @@ export class AddUserComponent implements OnInit {
 
   constructor(
     private dialogRef: MatDialogRef<AddUserComponent>,
-    private taskService: TaskControlService
+    private taskService: TaskControlService,
+    private toastr: ToastrService
     ) { 
     this.newUser.id;
     this.newUser.username = '';
@@ -27,7 +30,7 @@ export class AddUserComponent implements OnInit {
 
   criarUsuario() {
     this.taskService.criarUsuario(this.newUser).subscribe(data=>console.log());
-    alert("Usuario " + this.newUser.username + " criado com sucesso!");
+    this.toastr.success("Usuario " + this.newUser.username + " criado com sucesso!");
     location.reload();
   }
 
