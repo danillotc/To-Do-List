@@ -100,9 +100,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.taskControl.carregarUsuarios().subscribe(data => {
-      console.log(data);
+      console.log();
       this.usuario = data[1].username;
     })
 

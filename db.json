@@ -8,6 +8,21 @@
       "id": 1,
       "username": "usuario",
       "password": "senha"
+    },
+    {
+      "id": 2,
+      "username": "usuario2",
+      "password": "senha"
+    },
+    {
+      "username": "teste",
+      "password": "teste",
+      "id": 3
+    },
+    {
+      "username": "outroteste",
+      "password": "outroteste",
+      "id": 4
     }
   ],
   "tarefas": [

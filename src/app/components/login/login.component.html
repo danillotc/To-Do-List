@@ -8,12 +8,11 @@
     <mat-grid-tile class="separadorVertical">
         <form>
             <h1>Task Manager</h1>
-            <br>
 
             <h2>Gerencie sua vida!</h2>
             <br><br>
 
-            <h3>Login</h3>
+            <h3>Fazer login no Task Manager</h3>
             <br>
 
             <mat-form-field color="accent" class="example-form-field example-full-width">
@@ -30,12 +29,12 @@
 
             <button mat-raised-button color="primary" (click)="login()">Entrar</button>
             <br>
-
+            
             <div class="links">
-                <a href="#">Cadastrar novo usuário</a>
-                <br>
-                <a href="#">Esqueci minha senha</a>
+                <button mat-stroked-button color="basic" (click)="abrirModalAddUser()">Cadastrar novo usuário</button>
+                <br><br>
+                <button mat-stroked-button color="basic" (click)="abrirModalEsqueci()">Esqueci minha senha</button>
             </div>
         </form>
     </mat-grid-tile>
-</mat-grid-list>    
+</mat-grid-list>
