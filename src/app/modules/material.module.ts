@@ -11,10 +11,23 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { A11yModule } from '@angular/cdk/a11y';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
+    imports: [
+        DragDropModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatListModule,
+        MatButtonModule,
+        MatButtonToggleModule,
+        MatBadgeModule,
+        MatDialogModule,
+        MatInputModule,
+        MatSelectModule,
+        MatGridListModule
+    ],
     exports: [
         DragDropModule,
         MatToolbarModule,
@@ -27,8 +40,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
         MatDialogModule,
         MatInputModule,
         MatSelectModule,
-        A11yModule,
-        MatSlideToggleModule
+        MatGridListModule
     ]
 })
 

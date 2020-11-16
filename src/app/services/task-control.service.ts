@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Category } from '../models/category.model';
+import { User } from '../models/user.model';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
@@ -19,6 +20,7 @@ export class TaskControlService {
 
   constructor(private http: HttpClient) { }
 
+  // Controle de categorias
   carregarCategorias(): Observable<Category>{
 
     return this.http.get<Category>(this.url + '/tarefas', this.options)
@@ -55,6 +57,40 @@ export class TaskControlService {
     )
   }
 
+  // Controle de usuários
+  carregarUsuarios(): Observable<User> {
+    return this.http.get<User>(this.url + '/user', this.options)
+    .pipe (
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  criarUsuario(usuario: User): Observable<User>{
+    return this.http.post<User>(this.url + '/user', usuario, this.options)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  atualizarUsuario(id, usuario): Observable<User> {
+    return this.http.put<User>(this.url + '/user/' + id, usuario, this.options)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  excluirUsuario(id) {
+    return this.http.delete<User>(this.url + '/user/' + id, this.options)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+
+  // Controle de erros
   handleError(error){
     let errorMessage = '';
 
