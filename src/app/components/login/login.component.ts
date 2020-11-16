@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
     // }
 
     if (this.listaUsuarios.find(user => user.username === this.user.username)) {
-      if (this.listaUsuarios.findIndex(user => user.password === this.user.password)) {
+      if (this.listaUsuarios.find(user => user.password === this.user.password)) {
         let token = this.listaUsuarios.findIndex(user => user.password === this.user.password);
         document.cookie=`token = ${​​token}​​`;
         this.router.navigate(['/home'])
