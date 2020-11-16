@@ -22,9 +22,9 @@ export class DragDropComponent implements OnInit {
 
   @Input() filtroCategoria;
 
-  userId = document.cookie;
+  userId = document.cookie.split('token=')[1];
 
-  category;
+  category = [];
   listaCategorias = [];
 
   constructor(
@@ -34,15 +34,19 @@ export class DragDropComponent implements OnInit {
   ) { }
 
   pegarCategorias() {
-    this.taskControl.carregarCategorias().subscribe((data: Category) => {
-      this.category = data;
-      try {
-        for (let i = 0; i < 300; i++) {
-          if (this.listaCategorias.includes(this.category[i].nome_categoria) != true && this.category[i].nome_categoria != 'hidd3n_c4tegory123456') {
+    this.taskControl.carregarCategorias().subscribe((data) => {
+      
+      for (let i = 0; i < 300; i++) {
+        try{
+          if (this.listaCategorias.includes(this.category[i].nome_categoria) != true && this.category[i].nome_categoria != 'hidd3n_c4tegory123456'  && parseInt(this.category[i].id_user) == parseInt(this.userId)) {
             this.listaCategorias.push(this.category[i].nome_categoria)
           }
-        }
-      } catch {
+        }catch{}
+        try{
+          if(parseInt(data[i].id_user) == parseInt(this.userId)){
+            this.category.push(data[i])
+          }
+        }catch{}
       }
     });
     setTimeout(() => {
@@ -52,6 +56,7 @@ export class DragDropComponent implements OnInit {
         }
       })
     }, 200);
+    // console.log(this.category)
   }
 
   apagarCategoria(id) {

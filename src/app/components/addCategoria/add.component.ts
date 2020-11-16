@@ -16,6 +16,7 @@ export class AddComponent implements OnInit {
   category;
   categoriesList = [];
   newCategory = {} as Category;
+  userId = document.cookie.split('token=')[1];
 
   constructor(
       private dialogRef: MatDialogRef<AddComponent>,
@@ -33,7 +34,7 @@ export class AddComponent implements OnInit {
       this.category = data;
       try {
         for (let i = 0; i < 300; i++) {
-          if (this.categoriesList.includes(this.category[i].nome_categoria) != true && this.category[i].nome_categoria != 'hidd3n_c4tegory123456') {
+          if (this.categoriesList.includes(this.category[i].nome_categoria) != true && this.category[i].nome_categoria != 'hidd3n_c4tegory123456' && parseInt(this.category[i].id_user) == parseInt(this.userId)) {
             this.categoriesList.push(this.category[i].nome_categoria)
           }
         }
@@ -47,6 +48,9 @@ export class AddComponent implements OnInit {
   }
 
   criarCategorias(selectValue) {
+
+    this.newCategory.id_user = parseInt(document.cookie.split('token=')[1]);
+
     if(selectValue == 'Nova categoria'){
       this.taskControl.criarCategorias(this.newCategory).subscribe((data) => {
         console.log();

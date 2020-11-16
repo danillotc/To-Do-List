@@ -16,6 +16,7 @@ export class EditComponent implements OnInit {
   category;
   categoriesList = [];
   newCategory = {} as Category;
+  userId = document.cookie.split('token=')[1];
 
   selected;
 
@@ -44,7 +45,7 @@ export class EditComponent implements OnInit {
       this.category = data;
       try {
         for (let i = 0; i < 300; i++) {
-          if (this.categoriesList.includes(this.category[i].nome_categoria) != true && this.category[i].nome_categoria != 'hidd3n_c4tegory123456') {
+          if (this.categoriesList.includes(this.category[i].nome_categoria) != true && this.category[i].nome_categoria != 'hidd3n_c4tegory123456' && parseInt(this.category[i].id_user) == parseInt(this.userId)) {
             this.categoriesList.push(this.category[i].nome_categoria)
           }
         }

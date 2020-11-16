@@ -29,6 +29,11 @@
       "username": "luan",
       "password": "5826",
       "id": 5
+    },
+    {
+      "username": "lucas",
+      "password": "123",
+      "id": 6
     }
   ],
   "tarefas": [
@@ -39,38 +44,31 @@
     },
     {
       "id": 1,
-      "nome_tarefa": "Criar minha primeria tarefa",
+      "id_user": 5,
       "nome_categoria": "Minha primeira categoria",
+      "nome_tarefa": "Criar minha primeria tarefa",
       "descricao": "Tenho que criar minha primeira tarefa",
       "data_inicio": "2015-01-12",
       "prazo": "2015-02-12",
       "status": false
     },
     {
-      "nome_categoria": "Oloco",
+      "id_user": 3,
+      "nome_categoria": "teste",
       "nome_tarefa": "teste",
       "id": 2
     },
     {
-      "nome_categoria": "oi",
-      "nome_tarefa": "oi",
+      "nome_categoria": "teste",
+      "nome_tarefa": "teste",
+      "id_user": 6,
       "id": 3
     },
     {
-      "id": 4,
-      "nome_tarefa": "teste",
-      "nome_categoria": "oi"
-    },
-    {
-      "nome_categoria": "Danilo",
-      "nome_tarefa": "Comer",
-      "id": 5
-    },
-    {
-      "id": 3,
-      "nome_tarefa": "ola",
-      "nome_categoria": "Minha primeira categoria",
-      "status": true
+      "nome_tarefa": "tesadfasdsadasdasdas",
+      "id_user": 3,
+      "nome_categoria": "teste",
+      "id": 4
     }
   ]
 }
