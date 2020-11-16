@@ -59,6 +59,9 @@ export class EditComponent implements OnInit {
   }
 
   salvar(id) {
+
+    this.newCategory.id_user = parseInt(document.cookie.split('token=')[1]);
+
     this.taskControl.atualizarCategoria(id,this.newCategory).subscribe((data)=>{
       this.toast.success('Tarefa alterado com sucesso!');
       setTimeout(() => {

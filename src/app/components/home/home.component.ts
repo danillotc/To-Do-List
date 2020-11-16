@@ -19,24 +19,14 @@ export class HomeComponent implements OnInit {
   usuario;
 
   constructor(
-      private modalAdd: MatDialog, 
-      private taskControl: TaskControlService,
-    ) { }
-
-    onInputChange(){
-      // if (this.dragDropComponent.category.status == true) {
-      //   this.dragDropComponent.category.map(data => {
-      //     if (data.status == true) {
-      //       $(`#tarefa${data.id}`).addClass('concluido');
-      //     }
-      //   })
-      // }
-    }
+    private modalAdd: MatDialog,
+    private taskControl: TaskControlService,
+  ) { }
 
   mudarContraste() {
     setTimeout(() => {
 
-      setInterval(()=>{
+      setInterval(() => {
         if (this.isChecked) {
           document.querySelectorAll('h1').forEach(element => {
             element.style.color = 'yellow';
@@ -55,7 +45,7 @@ export class HomeComponent implements OnInit {
           })
           $('mat-icon').css('color', 'black');
           $('#btnSair').css('color', 'white');
-          
+
           document.getElementById('menu').style.color = 'yellow';
           document.getElementById('adicionarTarefa').style.color = '';
           document.getElementById('filtraTarefa').style.color = '';
@@ -99,7 +89,7 @@ export class HomeComponent implements OnInit {
           $(`.concluidoContraste`).addClass('concluido');
           $(`.concluidoContraste`).removeClass('concluidoContraste');
         }
-      },200)
+      }, 200)
     }, 200);
   }
 

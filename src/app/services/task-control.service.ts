@@ -31,7 +31,7 @@ export class TaskControlService {
 
   }
 
-  criarCategorias(categoria: Category): Observable<Category>{
+  criarCategorias(categoria): Observable<Category>{
 
     return this.http.post<Category>(this.url + '/tarefas', categoria ,this.options)
     .pipe(
@@ -77,6 +77,7 @@ export class TaskControlService {
   }
 
   criarUsuario(usuario: User): Observable<User>{
+   
     return this.http.post<User>(this.url + '/user', usuario, this.options)
     .pipe(
       retry(1),

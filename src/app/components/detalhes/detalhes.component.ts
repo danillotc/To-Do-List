@@ -26,20 +26,25 @@ export class DetalhesComponent implements OnInit {
       private taskControl: TaskControlService,
       private toast: ToastrService
     ) {
-    this.newCategory.id = data.id;
-    this.newCategory.nome_tarefa = data.nome_tarefa;
-    this.newCategory.nome_categoria = data.nome_categoria;
-    this.newCategory.descricao = data.descricao;
-    this.newCategory.data_inicio = data.data_inicio;
-    this.newCategory.prazo = data.prazo;
-    this.newCategory.status = data.status;
+      try{
+        this.newCategory.id = data.id;
+        this.newCategory.nome_tarefa = data.nome_tarefa;
+        this.newCategory.nome_categoria = data.nome_categoria;
+        this.newCategory.descricao = data.descricao;
+        this.newCategory.data_inicio = data.data_inicio;
+        this.newCategory.prazo = data.prazo;
+        this.newCategory.status = data.status;
+        console.log(data)
+      }catch{}
   }
 
   ngOnInit(): void {
- 
   }
 
   atualizarStatusTarefa(){
+
+    this.newCategory.id_user = parseInt(document.cookie.split('token=')[1]);
+
     setTimeout(() => {
       this.taskControl.atualizarCategoria(this.newCategory.id, this.newCategory).subscribe(data=>{
         this.toast.success('Alteração concluida!');

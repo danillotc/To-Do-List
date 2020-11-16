@@ -28,35 +28,41 @@ export class DragDropComponent implements OnInit {
   listaCategorias = [];
 
   constructor(
-    private taskControl: TaskControlService, 
-    private modalEdit: MatDialog, 
+    private taskControl: TaskControlService,
+    private modalEdit: MatDialog,
     private toastr: ToastrService
   ) { }
 
   pegarCategorias() {
     this.taskControl.carregarCategorias().subscribe((data) => {
-      
+
       for (let i = 0; i < 300; i++) {
         try{
-          if (this.listaCategorias.includes(this.category[i].nome_categoria) != true && this.category[i].nome_categoria != 'hidd3n_c4tegory123456'  && parseInt(this.category[i].id_user) == parseInt(this.userId)) {
-            this.listaCategorias.push(this.category[i].nome_categoria)
-          }
-        }catch{}
-        try{
-          if(parseInt(data[i].id_user) == parseInt(this.userId)){
+          if(parseInt(data[i].id_user) == parseInt(this.userId) || parseInt(data[i].id_user) == 0){
             this.category.push(data[i])
           }
         }catch{}
       }
+
+      for(let item of this.category){
+        try {
+          if (this.listaCategorias.includes(item.nome_categoria) != true && item.nome_categoria != 'hidd3n_c4tegory123456') {
+            this.listaCategorias.push(item.nome_categoria)
+          }
+        } catch { }
+      }
+
+
     });
-    setTimeout(() => {
+
+    setInterval(() => {
       this.category.map(data => {
         if (data.status == true) {
           $(`#tarefa${data.id}`).addClass('concluido');
         }
       })
-    }, 200);
-    // console.log(this.category)
+    }, 100);
+
   }
 
   apagarCategoria(id) {
@@ -74,18 +80,18 @@ export class DragDropComponent implements OnInit {
     moveItemInArray(this.category, event.previousIndex, event.currentIndex);
   }
 
-  abrirModalEdit(id) {
+  abrirModalEdit(item) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
-    dialogConfig.data = this.category[id];
+    dialogConfig.data = item;
     dialogConfig.width = '500px';
     this.modalEdit.open(EditComponent, dialogConfig)
   }
 
-  abrirModalDetalhes(id) {
+  abrirModalDetalhes(item) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
-    dialogConfig.data = this.category[id];
+    dialogConfig.data = item;
     dialogConfig.width = '500px';
     this.modalEdit.open(DetalhesComponent, dialogConfig)
   }

@@ -49,17 +49,28 @@
       "username": "Woody",
       "password": "toystory",
       "id": 9
+    },
+    {
+      "username": "oloco",
+      "password": "123456",
+      "id": 10
+    },
+    {
+      "username": "luansadsadas",
+      "password": "5826asdsa",
+      "id": 11
     }
   ],
   "tarefas": [
     {
       "nome_categoria": "hidd3n_c4tegory123456",
       "nome_tarefa": "Primeira",
+      "id_user": 0,
       "id": 0
     },
     {
       "id": 1,
-      "id_user": 5,
+      "id_user": 0,
       "nome_categoria": "Minha primeira categoria",
       "nome_tarefa": "Criar minha primeria tarefa",
       "descricao": "Tenho que criar minha primeira tarefa",
@@ -68,37 +79,24 @@
       "status": false
     },
     {
-      "id_user": 3,
-      "nome_categoria": "teste",
-      "nome_tarefa": "teste",
-      "id": 2
-    },
-    {
       "id": 3,
-      "nome_tarefa": "ola",
-      "nome_categoria": "Minha primeira categoria",
-      "status": false
+      "nome_tarefa": "dsadsadsad",
+      "nome_categoria": "teste",
+      "status": true,
+      "id_user": 6
     },
     {
       "id": 4,
-      "nome_tarefa": "teste",
-      "id_user": 6,
-      "id": 3
+      "nome_tarefa": "asdasdas",
+      "nome_categoria": "dasdsad",
+      "status": true,
+      "id_user": 5
     },
     {
-      "id": 3,
-      "nome_tarefa": "ola",
-      "nome_categoria": "Minha primeira categoria",
-      "status": true
-    },
-    {
-      "nome_categoria": "Nova categoria",
-      "nome_tarefa": "Beber uma coca-cola",
-      "descricao": "Com gelo e limão",
-      "data_inicio": "2020-11-26",
-      "prazo": "2020-11-27",
-      "outros": "Beber ouvindo um jazz",
-      "id": 6
+      "nome_tarefa": "oi",
+      "id_user": 5,
+      "nome_categoria": "dasdsad",
+      "id": 5
     }
   ]
 }
