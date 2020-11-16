@@ -20,6 +20,8 @@ export class DragDropComponent implements OnInit {
 
   @Input() filtroCategoria;
 
+  userId = document.cookie;
+
   category;
   listaCategorias = [];
 

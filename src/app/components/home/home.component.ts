@@ -87,9 +87,8 @@ export class HomeComponent implements OnInit {
   constructor(private modalAdd: MatDialog, private taskControl: TaskControlService) { }
 
   ngOnInit() {
-
     this.taskControl.carregarUsuarios().subscribe(data => {
-      console.log(data);
+      console.log();
       this.usuario = data[1].username;
     })
 

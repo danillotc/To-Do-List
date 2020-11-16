@@ -6,7 +6,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { User } from '../../models/user.model';
 import { TaskControlService } from '../../services/task-control.service';
 import { AddUserComponent } from '../../components/add-user/add-user.component';
-
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -21,12 +21,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private taskControl: TaskControlService,
     private router: Router,
-    private modalAdd: MatDialog
-    ) {
-      this.user.id;
-      this.user.username='';
-      this.user.password='';
-     }
+    private modalAdd: MatDialog,
+    private toastr: ToastrService
+    ) { }
 
   ngOnInit(): void {
     this.pegarUsuarios();
@@ -34,23 +31,37 @@ export class LoginComponent implements OnInit {
   
   pegarUsuarios() {
     this.taskControl.carregarUsuarios().subscribe((data) => {
-      for (let i=0; i<100; i++) {
-        if (data[i]) {
-          this.listaUsuarios.push(data[i]);
+      try {
+        for (let i=0; i<100; i++) {
+          if (data[i]) {
+            this.listaUsuarios.push(data[i]);
+          }
         }
-      }
+      } catch {}
     });
   }
 
   login() {
+
+    // for(let data of this.listaUsuarios) {
+    //   if (data.username == this.user.username && data.password == this.user.password) {
+    //     this.toastr.success("Login realizado com sucesso")
+    //   } 
+    //   else {
+    //     this.toastr.error("Usuário ou senha inválidos")
+    //   }
+    // }
+
     if (this.listaUsuarios.find(user => user.username === this.user.username)) {
-      if (this.listaUsuarios.find(user => user.password === this.user.password)) {
+      if (this.listaUsuarios.findIndex(user => user.password === this.user.password)) {
+        let token = this.listaUsuarios.findIndex(user => user.password === this.user.password);
+        document.cookie=`token = ${​​token}​​`;
         this.router.navigate(['/home'])
       } else {
-        alert("Senha incorreta")
+        this.toastr.error("Senha incorreta")
       }
     } else {
-      alert('O usuário não existe')
+      this.toastr.error('O usuário não existe')
     }
   }
 
