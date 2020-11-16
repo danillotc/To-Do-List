@@ -16,7 +16,7 @@ body {
 }
 
 .mat-drawer-container {
-  min-height: 667px !important;
+  min-height: 100vh !important;
 }
 
 .example-list {
