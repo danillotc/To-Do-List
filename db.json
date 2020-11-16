@@ -14,29 +14,31 @@
     },
     {
       "id": 1,
-      "nome_tarefa": "olocosadasd",
-      "nome_categoria": "teste"
+      "nome_tarefa": "Oloco",
+      "nome_categoria": "Oloco",
+      "descricao": "eaaaaaaaaaaaaaaaaaaaaa",
+      "data_inicio": "2001-04-15",
+      "prazo": "2020-11-19"
     },
     {
-      "id": 2,
-      "nome_tarefa": "tchau",
-      "nome_categoria": "Minha primeira categoria",
-      "descricao": "asdsadasd"
+      "nome_categoria": "Oloco",
+      "nome_tarefa": "teste",
+      "id": 2
     },
     {
-      "id": 3,
-      "nome_tarefa": "Minha primeira tarefa",
-      "nome_categoria": "Minha primeira categoria"
+      "nome_categoria": "oi",
+      "nome_tarefa": "oi",
+      "id": 3
     },
     {
-      "nome_tarefa": "Minha segunda categoria",
-      "nome_categoria": "Minha primeira categoria",
-      "id": 4
+      "id": 4,
+      "nome_tarefa": "teste",
+      "nome_categoria": "oi"
     },
     {
-      "id": 5,
-      "nome_tarefa": "Minha terceira tarefa",
-      "nome_categoria": "teste"
+      "nome_categoria": "Danilo",
+      "nome_tarefa": "Comer",
+      "id": 5
     }
   ]
 }

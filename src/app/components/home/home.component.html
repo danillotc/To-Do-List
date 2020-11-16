@@ -5,10 +5,10 @@
             <a mat-list-item type="button">
                 <span class="title">Task Manager</span>
             </a>
-            <a mat-list-item routerLink="/dashboard">
+            <!-- <a mat-list-item routerLink="/dashboard">
                 <mat-icon class="icon">add</mat-icon>
                 <span class="label" (click)="abrirModalAdd(1)">Adicionar tarefa</span>
-            </a>
+            </a> -->
             <a mat-list-item routerLink="/">
                 <mat-icon class="icon">input</mat-icon>
                 <span class="label">Sair</span>
@@ -18,16 +18,28 @@
 
     <mat-sidenav-content>
         <mat-toolbar color="primary">
-            <button mat-icon-button id="btnModal" class="example-icon" aria-label="Example icon-button with menu icon"
+            <button mat-icon-button id="btnModal" class="example-icon" aria-label="Botão do menu"
                 (click)="sideNav.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
-            <span>Task Manager</span>
+            <span class="barraPesquisa">
+                <form class="example-form">
+                    <mat-form-field class="example-full-width">
+                        <input autocomplete="off" matInput placeholder="Pesquisar categoria" [(ngModel)]="categoriaPesquisada" name="categoriaPesquisada">
+                    </mat-form-field>
+                </form>
+            </span>
             <span class="example-spacer"></span>
+            <button (click)="abrirModalAdd()" mat-icon-button class="example-icon favorite-icon"
+                aria-label="Example icon-button with heart icon">
+                <mat-icon>add</mat-icon>
+            </button>
         </mat-toolbar>
+
         <main>
-            <app-drag-drop></app-drag-drop>
+            <app-drag-drop [filtroCategoria]="categoriaPesquisada"></app-drag-drop>
         </main>
+        
     </mat-sidenav-content>
 
 </mat-sidenav-container>

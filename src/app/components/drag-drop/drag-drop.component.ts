@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-
-import { TaskControlService } from '../../services/task-control.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Category } from '../../models/category.model';
 
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+
 import { EditComponent } from '../edit/edit.component';
+
+import { ToastrService } from 'ngx-toastr';
+import { TaskControlService } from '../../services/task-control.service';
 
 @Component({
   selector: 'app-drag-drop',
@@ -16,14 +17,14 @@ import { EditComponent } from '../edit/edit.component';
 })
 export class DragDropComponent implements OnInit {
 
+  @Input() filtroCategoria;
+
   category;
   listaCategorias = [];
 
   pegarCategorias() {
     this.taskControl.carregarCategorias().subscribe((data: Category) => {
-
       this.category = data;
-
       try{
         for (let i = 0; i < 300; i++) {
           if (this.listaCategorias.includes(this.category[i].nome_categoria) != true && this.category[i].nome_categoria != 'hidd3n_c4tegory123456') {
@@ -32,7 +33,6 @@ export class DragDropComponent implements OnInit {
         }
       }catch{
       }
-
     });
 
   }
@@ -40,9 +40,11 @@ export class DragDropComponent implements OnInit {
   apagarCategoria(id) {
     if(window.confirm('Quer mesmo excluir esta tarefa?')) {
       this.taskControl.excluirCategoria(id).subscribe((data) => {
-        console.log(data);
+        this.toastr.success('Exclusão concluida com sucesso!');
       });
-      location.reload();
+      setTimeout(() => {
+        location.reload();
+      }, 500);
     }
   }
 
@@ -50,22 +52,18 @@ export class DragDropComponent implements OnInit {
     moveItemInArray(this.category, event.previousIndex, event.currentIndex);
   }
 
-  constructor(private taskControl: TaskControlService, private modalEdit: MatDialog) { }
+  constructor(private taskControl: TaskControlService, private modalEdit: MatDialog, private toastr: ToastrService) { }
 
   abrirModalEdit(id) {
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.disableClose = true;
     dialogConfig.data = this.category[id];
     dialogConfig.width = '500px';
-
     this.modalEdit.open(EditComponent, dialogConfig)
   }
 
   ngOnInit() {
-
     this.pegarCategorias();
-
   }
 
 }

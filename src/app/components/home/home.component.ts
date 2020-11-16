@@ -10,16 +10,12 @@ import { AddComponent } from '../../components/add/add.component';
 })
 export class HomeComponent implements OnInit {
 
-  notificacoes = ['Uma nova tarefa foi criada!'];
+  categoriaPesquisada = '';
 
-  abrirModalAdd(id) {
-
-    document.getElementById('btnModal').click()
-
+  abrirModalAdd() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '500px';
     dialogConfig.disableClose = true;
-
     this.modalAdd.open(AddComponent, dialogConfig)
   }
 

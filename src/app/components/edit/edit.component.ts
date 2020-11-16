@@ -59,7 +59,7 @@ export class EditComponent implements OnInit {
 
   salvar(id) {
     this.taskControl.atualizarCategoria(id,this.newCategory).subscribe((data)=>{
-      this.toast.success('Alterado com sucesso!');
+      this.toast.success('Tarefa alterado com sucesso!');
       setTimeout(() => {
         location.reload();
       }, 500);
