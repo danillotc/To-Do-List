@@ -31,9 +31,24 @@
       "id": 5
     },
     {
-      "username": "lucas",
-      "password": "123",
+      "username": "SamuelRosa",
+      "password": "skank",
       "id": 6
+    },
+    {
+      "username": "Maria",
+      "password": "dobairro",
+      "id": 7
+    },
+    {
+      "username": "Maria",
+      "password": "dosocorro",
+      "id": 8
+    },
+    {
+      "username": "Woody",
+      "password": "toystory",
+      "id": 9
     }
   ],
   "tarefas": [
@@ -59,16 +74,31 @@
       "id": 2
     },
     {
-      "nome_categoria": "teste",
+      "id": 3,
+      "nome_tarefa": "ola",
+      "nome_categoria": "Minha primeira categoria",
+      "status": false
+    },
+    {
+      "id": 4,
       "nome_tarefa": "teste",
       "id_user": 6,
       "id": 3
     },
     {
-      "nome_tarefa": "tesadfasdsadasdasdas",
-      "id_user": 3,
-      "nome_categoria": "teste",
-      "id": 4
+      "id": 3,
+      "nome_tarefa": "ola",
+      "nome_categoria": "Minha primeira categoria",
+      "status": true
+    },
+    {
+      "nome_categoria": "Nova categoria",
+      "nome_tarefa": "Beber uma coca-cola",
+      "descricao": "Com gelo e limão",
+      "data_inicio": "2020-11-26",
+      "prazo": "2020-11-27",
+      "outros": "Beber ouvindo um jazz",
+      "id": 6
     }
   ]
 }
