@@ -5,25 +5,25 @@
             <a mat-list-item type="button">
                 <span class="title">Task Manager</span>
             </a>
-            <!-- <a mat-list-item routerLink="/dashboard">
-                <mat-icon class="icon">add</mat-icon>
-                <span class="label" (click)="abrirModalAdd(1)">Adicionar tarefa</span>
-            </a> -->
             <a mat-list-item aria-label="Botão alto-contraste">
-                <mat-slide-toggle color="primary" class="example-margin">Alto-contraste </mat-slide-toggle>
+                <mat-slide-toggle id="slideToggle" [(ngModel)]="isChecked" (click)="mudarContraste()" color="warn" class="example-margin">Alto-contraste </mat-slide-toggle>
             </a>
             <br>
             <a mat-list-item routerLink="/" aria-label="Botão de sair">
-                <mat-icon class="icon">input</mat-icon>
+                <mat-icon class="icon" id="btnSair">input</mat-icon>
                 <span class="label">Sair</span>
             </a>
+            <div class="usuarioDetalhes">
+                <hr>
+                <h2>{{usuario}}</h2>
+            </div>
         </mat-sidenav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
         <mat-toolbar color="primary">
 
-            <button mat-icon-button id="btnModal" class="example-icon" aria-label="Botão de abrir o menu"
+            <button id="menuButton" mat-icon-button id="btnModal" class="example-icon" aria-label="Botão de abrir o menu"
                 (click)="sideNav.toggle()">
                 <mat-icon id="menu">menu</mat-icon>
             </button>
@@ -42,9 +42,8 @@
 
             <button aria-label="Botão para adicionar uma nova tarefa" (click)="abrirModalAdd()" mat-icon-button
                 class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-                <mat-icon>add</mat-icon>
+                <mat-icon id="adicionarTarefa">add</mat-icon>
             </button>
-
         </mat-toolbar>
 
         <main>

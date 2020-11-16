@@ -2,7 +2,6 @@
     Criação de tarefa
 </h1>
 
-
 <form (ngSubmit)="criarCategorias(select.value)" ngNativeValidate>
             
     <mat-form-field class="example-form-field example-full-width" color="accent">
@@ -44,7 +43,6 @@
         <input autocomplete="off" matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
     </mat-form-field>
 
-
     <mat-form-field class="example-full-width" color="accent">
         <textarea autocomplete="off" matInput type="text" placeholder="Anotações" [(ngModel)]="newCategory.outros" name="outros"> </textarea>
     </mat-form-field>
@@ -57,4 +55,3 @@
     </mat-dialog-actions>
     
 </form>
-<!-- (click)="criarCategorias(select.value)" -->

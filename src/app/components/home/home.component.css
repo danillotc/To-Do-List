@@ -24,6 +24,14 @@ a:active{
     border: none;
 }
 
+hr{
+    background-color:white;
+}
+
+h2{
+    font-weight: 100;
+}
+
 .navigation-items {
     list-style: none;
     padding: 0;
@@ -79,4 +87,10 @@ a:active{
     margin-left: 15px;
     font-size: 15px;
     width: 335px;
+}
+
+.usuarioDetalhes{
+    position: relative;
+    top: 65%;
+    text-align: center;
 }

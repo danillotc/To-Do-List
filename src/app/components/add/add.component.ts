@@ -57,8 +57,11 @@ export class AddComponent implements OnInit {
         console.log();
       });
     }
+
     this.toastr.success('Tarefa criado com sucesso!');
+
     document.getElementById('closeButton').click();
+    
     setTimeout(() => {
       location.reload();
     }, 500);

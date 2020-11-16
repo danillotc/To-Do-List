@@ -39,7 +39,7 @@ import { FiltroPipe } from './pipe/filtro.pipe';
     MaterialModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [TaskControlService],
   bootstrap: [AppComponent],

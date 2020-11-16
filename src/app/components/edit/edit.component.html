@@ -22,13 +22,11 @@
 
     <br>
 
-
     <mat-form-field color="accent" class="example-full-width">
         <textarea aria-label="Caixa de texto para editar descrição" autocomplete="off" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" style="overflow-y: hidden;" type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao" name="descricao"> </textarea>
     </mat-form-field>
 
     <br>
-
 
     <mat-form-field color="accent" class="example-full-width">
         <input aria-label="Calendário para editar Data de início" matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio" name="data_inicio">
@@ -36,11 +34,9 @@
 
     <br>
 
-
     <mat-form-field color="accent" class="example-full-width">
         <input aria-label="Calendário para editar Data final" matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
     </mat-form-field>
-
 
     <mat-dialog-actions>
         <button aria-label="Botão para salvar alterações" class="mat-raised-button mat-primary" (click)="salvar(newCategory.id)">Salvar</button>

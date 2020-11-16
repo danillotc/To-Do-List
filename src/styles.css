@@ -32,3 +32,8 @@ body {
   margin-bottom: 5px !important;
 }
 
+.mat-drawer-inner-container {
+  overflow-y: hidden !important;
+}
+
+
