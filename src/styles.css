@@ -36,4 +36,14 @@ body {
   overflow-y: hidden !important;
 }
 
+.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background, .mat-checkbox-checked.mat-warn .mat-checkbox-background {
+  background-color: rgb(45, 214, 45);
+}
 
+.concluido{
+  border-left: 8px solid rgb(45, 214, 45) !important;
+}
+
+.concluidoContraste{
+  border-left: 8px solid purple !important;
+}

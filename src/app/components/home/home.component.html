@@ -6,7 +6,8 @@
                 <span class="title">Task Manager</span>
             </a>
             <a mat-list-item aria-label="Botão alto-contraste">
-                <mat-slide-toggle id="slideToggle" [(ngModel)]="isChecked" (click)="mudarContraste()" color="warn" class="example-margin">Alto-contraste </mat-slide-toggle>
+                <mat-slide-toggle id="slideToggle" [(ngModel)]="isChecked" (click)="mudarContraste()" color="warn"
+                    class="example-margin">Alto-contraste </mat-slide-toggle>
             </a>
             <br>
             <a mat-list-item routerLink="/" aria-label="Botão de sair">
@@ -23,8 +24,8 @@
     <mat-sidenav-content>
         <mat-toolbar color="primary">
 
-            <button id="menuButton" mat-icon-button id="btnModal" class="example-icon" aria-label="Botão de abrir o menu"
-                (click)="sideNav.toggle()">
+            <button id="menuButton" mat-icon-button id="btnModal" class="example-icon"
+                aria-label="Botão de abrir o menu" (click)="sideNav.toggle()">
                 <mat-icon id="menu">menu</mat-icon>
             </button>
 
@@ -39,6 +40,17 @@
             </span>
 
             <span class="example-spacer"></span>
+
+            <button mat-button [matMenuTriggerFor]="menu" aria-label="Botão para adicionar uma nova tarefa" mat-icon-button
+                class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                <mat-icon id="adicionarTarefa">filter_list</mat-icon>
+            </button>
+
+            <mat-menu #menu="matMenu" aria-label="Botão filtro de tarefas">
+                <button mat-menu-item aria-label="Botão todas as tarefas">Todas as tarefas</button>
+                <button mat-menu-item aria-label="Botão tarefas concluídas">Tarefas concluídas</button>
+                <button mat-menu-item aria-label="Botão tarefas não concluídas">Tarefas não concluídas</button>
+            </mat-menu>
 
             <button aria-label="Botão para adicionar uma nova tarefa" (click)="abrirModalAdd()" mat-icon-button
                 class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">

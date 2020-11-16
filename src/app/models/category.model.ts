@@ -8,6 +8,7 @@ export interface Category {
     data_inicio: string,
     prazo: string,
     descricao: string,
+    status: boolean,
     outros: string
 
 }

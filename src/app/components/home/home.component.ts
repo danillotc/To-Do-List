@@ -17,6 +17,11 @@ export class HomeComponent implements OnInit {
   isChecked = false;
   usuario;
 
+  constructor(
+      private modalAdd: MatDialog, 
+      private taskControl: TaskControlService
+    ) { }
+
   mudarContraste() {
     setTimeout(() => {
 
@@ -46,7 +51,13 @@ export class HomeComponent implements OnInit {
             'box-shadow': '#ffff',
             'background': 'black',
             'color': '#fff'
-          })
+          });
+          $('.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background, .mat-checkbox-checked.mat-warn .mat-checkbox-background').css({
+            'background-color': 'rgb(221, 29, 221)'
+          });
+
+          $(`.concluido`).addClass('concluidoContraste');
+
         } else {
           document.querySelectorAll('h1').forEach(element => {
             element.style.color = '';
@@ -64,14 +75,18 @@ export class HomeComponent implements OnInit {
             element.style.color = '';
           })
           document.getElementById('menu').style.color = 'white';
-  
-          $('#adicionarTarefa').css('color', '');
-          $('#btnSair').css('color', '');
+          document.getElementById('adicionarTarefa').style.color = '';
+          document.getElementById('btnSair').style.color = '';
           $('.mat-toolbar.mat-primary').css({
             'box-shadow': '#ffff',
             'background': '#c2185b',
             'color': 'white'
-          })
+          });
+          $('.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background, .mat-checkbox-checked.mat-warn .mat-checkbox-background').css({
+            'background-color': 'rgb(45, 214, 45)'
+          });
+          $(`.concluidoContraste`).addClass('concluido');
+          $(`.concluidoContraste`).removeClass('concluidoContraste');
         }
       },200)
     }, 200);
@@ -81,10 +96,8 @@ export class HomeComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '500px';
     dialogConfig.disableClose = true;
-    this.modalAdd.open(AddComponent, dialogConfig)
+    this.modalAdd.open(AddComponent, dialogConfig);
   }
-
-  constructor(private modalAdd: MatDialog, private taskControl: TaskControlService) { }
 
   ngOnInit() {
 

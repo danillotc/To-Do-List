@@ -14,6 +14,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { A11yModule } from '@angular/cdk/a11y';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
     exports: [
@@ -30,7 +32,9 @@ import { A11yModule } from '@angular/cdk/a11y';
         MatSelectModule,
         MatGridListModule,
         MatSlideToggleModule,
-        A11yModule
+        A11yModule,
+        MatCheckboxModule,
+        MatMenuModule
     ]
 })
 
