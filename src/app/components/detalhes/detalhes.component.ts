@@ -32,26 +32,20 @@ export class DetalhesComponent implements OnInit {
     this.newCategory.descricao = data.descricao;
     this.newCategory.data_inicio = data.data_inicio;
     this.newCategory.prazo = data.prazo;
+    this.newCategory.status = data.status;
   }
 
   ngOnInit(): void {
-    
-    this.pegarCategorias();
-
+ 
   }
 
-  pegarCategorias() {
-    this.taskControl.carregarCategorias().subscribe((data: Category) => {
-      this.category = data;
-      try {
-        for (let i = 0; i < 300; i++) {
-          if (this.categoriesList.includes(this.category[i].nome_categoria) != true && this.category[i].nome_categoria != 'hidd3n_c4tegory123456') {
-            this.categoriesList.push(this.category[i].nome_categoria)
-          }
-        }
-      } catch {
-      }
-    });
+  atualizarStatusTarefa(){
+    setTimeout(() => {
+      this.taskControl.atualizarCategoria(this.newCategory.id, this.newCategory).subscribe(data=>{
+        this.toast.success('Alteração concluida!');
+      })
+      location.reload();
+    }, 200);
   }
 
   fechar() {

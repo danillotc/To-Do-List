@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ToastrModule } from 'ngx-toastr';
 
-import { FiltroPipe } from './pipe/filtro.pipe';
+import { FiltroPipe, FiltroTarefas } from './pipe/filtro.pipe';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { DetalhesComponent } from './components/detalhes/detalhes.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
@@ -36,6 +36,7 @@ import { ForgotComponent } from './components/forgot/forgot.component';
     AddUserComponent,
     DetalhesComponent,
     ForgotComponent,
+    FiltroTarefas
   ],
   imports: [
     BrowserModule,
@@ -45,7 +46,9 @@ import { ForgotComponent } from './components/forgot/forgot.component';
     MaterialModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 1000
+    }),
   ],
   providers: [TaskControlService],
   bootstrap: [AppComponent],

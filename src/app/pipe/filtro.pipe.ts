@@ -14,3 +14,16 @@ export class FiltroPipe implements PipeTransform {
   }
 
 }
+
+@Pipe({
+  name: 'filtroTarefas'
+})
+export class FiltroTarefas{
+  transform(value: any, input: any): any {
+    if (input) {
+       return value.filter(val => val.indexOf(input) >= 0);
+     } else {
+       return value;
+     }
+    }
+}
