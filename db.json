@@ -67,19 +67,6 @@
       "id": 5
     },
     {
-      "nome_categoria": "Teste",
-      "nome_tarefa": "testar",
-      "descricao": "testando",
-      "data_inicio": "2020-11-02",
-      "prazo": "2020-11-28",
-      "outros": "Só um teste",
-      "id": 6
-      "id": 2,
-      "nome_tarefa": "Teste",
-      "nome_categoria": "Minha primeira categoria",
-      "status": true
-    },
-    {
       "id": 3,
       "nome_tarefa": "ola",
       "nome_categoria": "Minha primeira categoria",
