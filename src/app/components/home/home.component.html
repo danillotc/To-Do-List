@@ -32,7 +32,7 @@
             <span class="barraPesquisa">
                 <form class="example-form">
                     <mat-form-field class="example-full-width">
-                        <input aria-label="Caixa de texto de pesquisa das categorias" autocomplete="off" matInput
+                        <input (change)="onInputChange()" aria-label="Caixa de texto de pesquisa das categorias" autocomplete="off" matInput
                             placeholder="Pesquisar categoria" [(ngModel)]="categoriaPesquisada"
                             name="categoriaPesquisada">
                     </mat-form-field>
@@ -43,7 +43,7 @@
 
             <button mat-button [matMenuTriggerFor]="menu" aria-label="Botão para adicionar uma nova tarefa" mat-icon-button
                 class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-                <mat-icon id="adicionarTarefa">filter_list</mat-icon>
+                <mat-icon id="filtraTarefa">filter_list</mat-icon>
             </button>
 
             <mat-menu #menu="matMenu" aria-label="Botão filtro de tarefas">

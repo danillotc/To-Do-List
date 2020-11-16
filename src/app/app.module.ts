@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { DragDropComponent } from './components/drag-drop/drag-drop.component';
 import { EditComponent } from './components/edit/edit.component';
-import { AddComponent } from './components/add/add.component';
+import { AddComponent } from './components/addCategoria/add.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 

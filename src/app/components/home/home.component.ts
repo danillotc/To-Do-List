@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { AddComponent } from '../../components/add/add.component';
+import { AddComponent } from '../../components/addCategoria/add.component';
 
 import * as $ from 'jquery'
 import { TaskControlService } from 'src/app/services/task-control.service';
+import { DragDropComponent } from '../drag-drop/drag-drop.component';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +20,18 @@ export class HomeComponent implements OnInit {
 
   constructor(
       private modalAdd: MatDialog, 
-      private taskControl: TaskControlService
+      private taskControl: TaskControlService,
     ) { }
+
+    onInputChange(){
+      // if (this.dragDropComponent.category.status == true) {
+      //   this.dragDropComponent.category.map(data => {
+      //     if (data.status == true) {
+      //       $(`#tarefa${data.id}`).addClass('concluido');
+      //     }
+      //   })
+      // }
+    }
 
   mudarContraste() {
     setTimeout(() => {
@@ -46,7 +57,9 @@ export class HomeComponent implements OnInit {
           $('#btnSair').css('color', 'white');
           
           document.getElementById('menu').style.color = 'yellow';
-  
+          document.getElementById('adicionarTarefa').style.color = '';
+          document.getElementById('filtraTarefa').style.color = '';
+
           $('.mat-toolbar.mat-primary').css({
             'box-shadow': '#ffff',
             'background': 'black',
@@ -55,7 +68,6 @@ export class HomeComponent implements OnInit {
           $('.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background, .mat-checkbox-checked.mat-warn .mat-checkbox-background').css({
             'background-color': 'rgb(221, 29, 221)'
           });
-
           $(`.concluido`).addClass('concluidoContraste');
 
         } else {
@@ -75,7 +87,6 @@ export class HomeComponent implements OnInit {
             element.style.color = '';
           })
           document.getElementById('menu').style.color = 'white';
-          document.getElementById('adicionarTarefa').style.color = '';
           document.getElementById('btnSair').style.color = '';
           $('.mat-toolbar.mat-primary').css({
             'box-shadow': '#ffff',
@@ -100,11 +111,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.taskControl.carregarUsuarios().subscribe(data => {
-      console.log();
-      this.usuario = data[1].username;
+    const idUsuario = document.cookie.split('token=')[1];
+    this.taskControl.carregarUsuariosPorId(parseInt(idUsuario)).subscribe(data => {
+      this.usuario = data.username
     })
-
   }
 
 }

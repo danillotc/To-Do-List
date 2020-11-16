@@ -58,12 +58,22 @@ export class TaskControlService {
   }
 
   // Controle de usuários
+  carregarUsuariosPorId(id:number): Observable<User> {
+    if(id){
+      return this.http.get<User>(this.url + '/user/' + id, this.options)
+      .pipe (
+        retry(1),
+        catchError(this.handleError)
+      )
+    }
+  }
+
   carregarUsuarios(): Observable<User> {
     return this.http.get<User>(this.url + '/user', this.options)
-    .pipe (
-      retry(1),
-      catchError(this.handleError)
-    )
+      .pipe (
+        retry(1),
+        catchError(this.handleError)
+      )
   }
 
   criarUsuario(usuario: User): Observable<User>{
