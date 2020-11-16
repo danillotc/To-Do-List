@@ -1,0 +1,13 @@
+mat-grid-list {
+    background-color: #303030;
+    color: white;
+    text-align: center;
+}
+
+.separadorVertical {
+    border-left: solid #c2185b;
+}
+
+.links {
+    margin-top: 50px;
+}

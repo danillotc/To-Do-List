@@ -1,1 +1,41 @@
-<p>login works!</p>
+<mat-grid-list cols="3" rowHeight="100vh">
+    <mat-grid-tile colspan=2>
+        <h1>
+            Demo
+        </h1>
+    </mat-grid-tile>
+
+    <mat-grid-tile class="separadorVertical">
+        <form>
+            <h1>Task Manager</h1>
+            <br>
+
+            <h2>Gerencie sua vida!</h2>
+            <br><br>
+
+            <h3>Login</h3>
+            <br>
+
+            <mat-form-field color="accent" class="example-form-field example-full-width">
+                <mat-label>Usuário</mat-label>
+                <input autocomplete="off" matInput>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field color="accent" class="example-form-field example-full-width">
+                <mat-label>Senha</mat-label>
+                <input type="password" matInput>
+            </mat-form-field>
+            <br>
+
+            <button mat-raised-button color="primary" (click)="login()">Entrar</button>
+            <br>
+
+            <div class="links">
+                <a href="#">Cadastrar novo usuário</a>
+                <br>
+                <a href="#">Esqueci minha senha</a>
+            </div>
+        </form>
+    </mat-grid-tile>
+</mat-grid-list>    
