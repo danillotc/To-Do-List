@@ -17,6 +17,8 @@ export class AddComponent implements OnInit {
   categoriesList = [];
   newCategory = {} as Category;
   userId = document.cookie.split('token=')[1];
+  newDate = new Date();
+  today;
 
   constructor(
       private dialogRef: MatDialogRef<AddComponent>,
@@ -27,6 +29,7 @@ export class AddComponent implements OnInit {
 
   ngOnInit(): void {
     this.pegarCategorias();
+    this.today = `${this.newDate.getUTCFullYear()}-${(this.newDate.getUTCMonth() + 1)}-${this.newDate.getUTCDate()}`
   }
 
   pegarCategorias() {

@@ -32,13 +32,13 @@
     <br>
 
     <mat-form-field class="example-full-width" color="accent">
-        <input aria-label="Digite uma data de início da tarefa" autocomplete="off" matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio" name="data_inicio">
+        <input min="{{today}}" aria-label="Digite uma data de início da tarefa" autocomplete="off" matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio" name="data_inicio">
     </mat-form-field>
 
     <br>
 
     <mat-form-field class="example-full-width" color="accent">
-        <input aria-label="Digite uma data final" autocomplete="off" matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
+        <input min="{{today}}" aria-label="Digite uma data final" autocomplete="off" matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
     </mat-form-field>
 
     <mat-form-field class="example-full-width" color="accent">

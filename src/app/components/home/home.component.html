@@ -6,11 +6,11 @@
                 <span class="title">Task Manager</span>
             </a>
             <a mat-list-item aria-label="Botão alto-contraste">
-                <mat-slide-toggle id="slideToggle" [(ngModel)]="isChecked" color="warn"
-                    class="example-margin">Alto-contraste </mat-slide-toggle>
+                <mat-slide-toggle id="slideToggle" [(ngModel)]="isChecked" color="warn" class="example-margin">
+                    Alto-contraste </mat-slide-toggle>
             </a>
             <br>
-            <a mat-list-item (click)="sair()"  aria-label="Botão de sair">
+            <a mat-list-item (click)="sair()" aria-label="Botão de sair">
                 <mat-icon class="icon" id="btnSair">input</mat-icon>
                 <span class="label">Sair</span>
             </a>
@@ -49,7 +49,7 @@
 
             <button aria-label="Botão para adicionar uma nova tarefa" (click)="abrirModalAdd()" mat-icon-button
                 class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-                <mat-icon id="adicionarTarefa">add</mat-icon>
+                <mat-icon id="adicionarTarefa" matTooltip="Adicionar tarefa">add</mat-icon>
             </button>
         </mat-toolbar>
 
