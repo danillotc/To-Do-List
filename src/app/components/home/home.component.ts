@@ -5,7 +5,7 @@ import { AddComponent } from '../../components/addCategoria/add.component';
 
 import * as $ from 'jquery'
 import { TaskControlService } from 'src/app/services/task-control.service';
-import { DragDropComponent } from '../drag-drop/drag-drop.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,18 +15,21 @@ import { DragDropComponent } from '../drag-drop/drag-drop.component';
 export class HomeComponent implements OnInit {
 
   categoriaPesquisada = '';
-  isChecked = false;
+  isChecked;
+  acessibilidadeStatus;
   usuario;
+  userId = document.cookie.split('token=')[1];
 
   constructor(
     private modalAdd: MatDialog,
     private taskControl: TaskControlService,
+    private router: Router
   ) { }
 
   mudarContraste() {
     setTimeout(() => {
-
-      setInterval(() => {
+      
+      setInterval(()=>{
         if (this.isChecked) {
           document.querySelectorAll('h1').forEach(element => {
             element.style.color = 'yellow';
@@ -45,11 +48,11 @@ export class HomeComponent implements OnInit {
           })
           $('mat-icon').css('color', 'black');
           $('#btnSair').css('color', 'white');
-
+    
           document.getElementById('menu').style.color = 'yellow';
           document.getElementById('adicionarTarefa').style.color = '';
           document.getElementById('filtraTarefa').style.color = '';
-
+    
           $('.mat-toolbar.mat-primary').css({
             'box-shadow': '#ffff',
             'background': 'black',
@@ -59,8 +62,8 @@ export class HomeComponent implements OnInit {
             'background-color': 'rgb(221, 29, 221)'
           });
           $(`.concluido`).addClass('concluidoContraste');
-
-        } else {
+    
+        } else {        
           document.querySelectorAll('h1').forEach(element => {
             element.style.color = '';
           })
@@ -89,7 +92,8 @@ export class HomeComponent implements OnInit {
           $(`.concluidoContraste`).addClass('concluido');
           $(`.concluidoContraste`).removeClass('concluidoContraste');
         }
-      }, 200)
+      })
+
     }, 200);
   }
 
@@ -100,11 +104,26 @@ export class HomeComponent implements OnInit {
     this.modalAdd.open(AddComponent, dialogConfig);
   }
 
-  ngOnInit() {
+  verificarAutentificacao(){
     const idUsuario = document.cookie.split('token=')[1];
-    this.taskControl.carregarUsuariosPorId(parseInt(idUsuario)).subscribe(data => {
-      this.usuario = data.username
-    })
+
+    if(idUsuario == '0'){
+      this.router.navigate(['/'])
+    }else{
+      this.taskControl.carregarUsuariosPorId(parseInt(idUsuario)).subscribe(data => {
+        this.usuario = data.username
+      })
+    }
+  }
+
+  sair(){
+    document.cookie = "token=0";
+    this.verificarAutentificacao();
+  }
+
+  ngOnInit() {
+    this.mudarContraste();
+    this.verificarAutentificacao();
   }
 
 }

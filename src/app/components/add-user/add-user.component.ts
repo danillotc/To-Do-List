@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 
 import { User } from '../../models/user.model';
 import { TaskControlService } from '../../services/task-control.service';
+import { Category } from '../../models/category.model';
 
 @Component({
   selector: 'app-add-user',
@@ -14,12 +15,13 @@ import { TaskControlService } from '../../services/task-control.service';
 export class AddUserComponent implements OnInit {
 
   newUser = {} as User;
-  userId = document.cookie.split('token=')[1];
+  userId;
+  usuarios;
 
   constructor(
     private dialogRef: MatDialogRef<AddUserComponent>,
     private taskService: TaskControlService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
     ) { 
     this.newUser.id;
     this.newUser.username = '';
@@ -30,9 +32,15 @@ export class AddUserComponent implements OnInit {
   }
 
   criarUsuario() {
+
+    this.taskService.carregarUsuarios().subscribe(data=>{
+      this.usuarios = data;
+      this.userId = this.usuarios.slice(-1)[0];
+    })
+
     this.taskService.criarUsuario(this.newUser).subscribe(data=>{
       this.taskService.criarCategorias({
-        id_user: this.userId,
+        "id_user": parseInt(this.userId.id),
         "nome_categoria": "Minha primeira categoria",
         "nome_tarefa": "Criar minha primeria tarefa",
         "descricao": "Tenho que criar minha primeira tarefa",
@@ -42,7 +50,9 @@ export class AddUserComponent implements OnInit {
       }).subscribe(data=>console.log())
     });
     this.toastr.success("Usuario " + this.newUser.username + " criado com sucesso!");
-    location.reload();
+    setTimeout(() => {
+      location.reload();
+    }, 500);
   }
 
   fechar() {

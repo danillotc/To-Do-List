@@ -36,6 +36,10 @@
         <input aria-label="Calendário para editar Data final" matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
     </mat-form-field>
 
+    <mat-form-field class="example-full-width" color="accent">
+        <textarea autocomplete="off" matInput type="text" placeholder="Anotações" [(ngModel)]="newCategory.outros" name="outros"> </textarea>
+    </mat-form-field>
+
     <mat-dialog-actions>
         <button aria-label="Botão para salvar alterações" class="mat-raised-button mat-primary" (click)="salvar(newCategory.id)">Salvar</button>
         <button aria-label="Botão para cancelar edição" class="mat-raised-button" (click)="fechar()">Cancelar</button>

@@ -6,64 +6,9 @@
       "password": "1234"
     },
     {
-      "id": 1,
-      "username": "usuario",
-      "password": "senha"
-    },
-    {
-      "id": 2,
-      "username": "usuario2",
-      "password": "senha"
-    },
-    {
-      "username": "teste",
-      "password": "teste",
-      "id": 3
-    },
-    {
-      "username": "outroteste",
-      "password": "outroteste",
-      "id": 4
-    },
-    {
       "username": "luan",
-      "password": "5826",
-      "id": 5
-    },
-    {
-      "username": "SamuelRosa",
-      "password": "skank",
-      "id": 6
-    },
-    {
-      "username": "Maria",
-      "password": "dobairro",
-      "id": 7
-    },
-    {
-      "username": "Maria",
-      "password": "dosocorro",
-      "id": 8
-    },
-    {
-      "username": "Woody",
-      "password": "toystory",
-      "id": 9
-    },
-    {
-      "username": "oloco",
-      "password": "123456",
-      "id": 10
-    },
-    {
-      "username": "luansadsadas",
-      "password": "5826asdsa",
-      "id": 11
-    },
-    {
-      "username": "luna",
       "password": "123",
-      "id": 12
+      "id": 1
     }
   ],
   "tarefas": [
@@ -75,43 +20,31 @@
     },
     {
       "id": 1,
-      "id_user": 0,
-      "nome_categoria": "Minha primeira categoria",
-      "nome_tarefa": "Criar minha primeria tarefa",
-      "descricao": "Tenho que criar minha primeira tarefa",
-      "data_inicio": "2015-01-12",
-      "prazo": "2015-02-12",
-      "status": false
-    },
-    {
-      "id": 3,
-      "nome_tarefa": "dsadsadsad",
-      "nome_categoria": "teste",
-      "status": true,
-      "id_user": 6
-    },
-    {
-      "id": 4,
-      "nome_tarefa": "asdasdas",
-      "nome_categoria": "dasdsad",
-      "status": true,
-      "id_user": 5
-    },
-    {
       "nome_tarefa": "oi",
-      "id_user": 5,
-      "nome_categoria": "dasdsad",
-      "id": 5
-    },
-    {
-      "id_user": "5​​",
       "nome_categoria": "Minha primeira categoria",
-      "nome_tarefa": "Criar minha primeria tarefa",
       "descricao": "Tenho que criar minha primeira tarefa",
       "data_inicio": "2015-01-12",
       "prazo": "2015-02-12",
-      "status": false,
-      "id": 6
+      "status": true,
+      "id_user": 1
+    },
+    {
+      "nome_tarefa": "teste",
+      "id_user": 1,
+      "nome_categoria": "Minha primeira categoria",
+      "id": 2
+    },
+    {
+      "nome_categoria": "teste",
+      "nome_tarefa": "teste",
+      "id_user": 1,
+      "id": 3
+    },
+    {
+      "nome_tarefa": "test",
+      "id_user": 1,
+      "nome_categoria": "teste",
+      "id": 4
     }
   ]
 }

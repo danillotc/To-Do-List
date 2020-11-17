@@ -47,6 +47,10 @@
             [(ngModel)]="newCategory.prazo" name="prazo">
     </mat-form-field>
 
+    <mat-form-field class="example-full-width" color="accent">
+        <textarea autocomplete="off" matInput type="text" placeholder="Anotações" [(ngModel)]="newCategory.outros" name="outros"> </textarea>
+    </mat-form-field>
+
     <mat-dialog-actions>
         <button aria-label="Botão para sair da tela de detalhes" class="mat-raised-button"
             (click)="fechar()">Cancelar</button>

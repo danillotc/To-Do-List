@@ -39,7 +39,7 @@ export class DragDropComponent implements OnInit {
       for (let i = 0; i < 300; i++) {
         try{
           if(parseInt(data[i].id_user) == parseInt(this.userId) || parseInt(data[i].id_user) == 0){
-            this.category.push(data[i])
+            this.category.push(data[i]);
           }
         }catch{}
       }
@@ -51,7 +51,6 @@ export class DragDropComponent implements OnInit {
           }
         } catch { }
       }
-
 
     });
 

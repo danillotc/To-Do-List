@@ -5,6 +5,7 @@ import { Category } from '../models/category.model';
 import { User } from '../models/user.model';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable()
 
@@ -18,7 +19,7 @@ export class TaskControlService {
     })
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   // Controle de categorias
   carregarCategorias(): Observable<Category>{
@@ -72,7 +73,7 @@ export class TaskControlService {
     return this.http.get<User>(this.url + '/user', this.options)
       .pipe (
         retry(1),
-        catchError(this.handleError)
+        catchError(this.handleError),
       )
   }
 
