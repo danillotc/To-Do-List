@@ -101,7 +101,7 @@ export class HomeComponent implements OnInit {
     const idUsuario = document.cookie.split('token=')[1];
 
     if(idUsuario == '0' || idUsuario == undefined){
-      this.router.navigate(['/login'])
+      location.href = '/login'
     }else{
       this.taskControl.carregarUsuariosPorId(parseInt(idUsuario)).subscribe(data => {
         this.usuario = data.username
@@ -110,6 +110,7 @@ export class HomeComponent implements OnInit {
   }
 
   sair(){
+    this.isChecked = false;
     document.cookie = "token=0";
     this.verificarAutentificacao();
   }

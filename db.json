@@ -27,23 +27,6 @@
       "prazo": "2020-11-18",
       "status": false,
       "id": 1
-    },
-    {
-      "id": 2,
-      "nome_tarefa": "Comer agora",
-      "nome_categoria": "teste",
-      "descricao": "Vou almoçar",
-      "data_inicio": "2020-11-17",
-      "id_user": 1
-    },
-    {
-      "nome_tarefa": "Fazer lição",
-      "descricao": "Tem que fazer lição de geografia",
-      "data_inicio": "2020-11-17",
-      "prazo": "2020-12-15",
-      "id_user": 1,
-      "nome_categoria": "teste",
-      "id": 3
     }
   ]
 }
