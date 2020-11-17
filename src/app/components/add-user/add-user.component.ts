@@ -33,12 +33,12 @@ export class AddUserComponent implements OnInit {
 
   criarUsuario() {
 
+    this.taskService.criarUsuario(this.newUser).subscribe(data=>console.log(''));
+
     this.taskService.carregarUsuarios().subscribe(data=>{
       this.usuarios = data;
       this.userId = this.usuarios.slice(-1)[0];
-    })
 
-    this.taskService.criarUsuario(this.newUser).subscribe(data=>{
       this.taskService.criarCategorias({
         "id_user": parseInt(this.userId.id),
         "nome_categoria": "Minha primeira categoria",
@@ -47,9 +47,12 @@ export class AddUserComponent implements OnInit {
         "data_inicio": "2015-01-12",
         "prazo": "2015-02-12",
         "status": false
-      }).subscribe(data=>console.log())
-    });
+      }).subscribe(data=>console.log(''))
+
+    })
+
     this.toastr.success("Usuario " + this.newUser.username + " criado com sucesso!");
+
     setTimeout(() => {
       location.reload();
     }, 500);
