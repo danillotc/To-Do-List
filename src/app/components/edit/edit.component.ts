@@ -43,16 +43,6 @@ export class EditComponent implements OnInit {
 
   pegarCategorias() {
     this.taskControl.carregarCategorias().subscribe((data: Category) => {
-    //   this.category.push(data);
-    //   try {
-    //     for (let i = 0; i < 300; i++) {
-    //       if (this.categoriesList.includes(this.category[i].nome_categoria) != true && this.category[i].nome_categoria != 'hidd3n_c4tegory123456' && parseInt(this.category[i].id_user) == parseInt(this.userId)) {
-    //         this.categoriesList.push(this.category[i].nome_categoria)
-    //       }
-    //     }
-    //   } catch {
-    //   }
-
     for (let i = 0; i < 300; i++) {
       try{
         this.category.push(data[i]);

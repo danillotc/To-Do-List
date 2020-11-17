@@ -6,9 +6,14 @@
       "password": "12dsadsadasdsadsadasd34"
     },
     {
-      "username": "luan",
-      "password": "123",
+      "username": "Danilo",
+      "password": "123456",
       "id": 1
+    },
+    {
+      "username": "Lucas",
+      "password": "123",
+      "id": 2
     }
   ],
   "tarefas": [
@@ -19,14 +24,32 @@
       "id": 0
     },
     {
-      "id_user": 1,
+      "id": 2,
+      "nome_tarefa": "Dar aula de história",
+      "nome_categoria": "Aula",
+      "descricao": "Amanha terei que dar aula",
+      "data_inicio": "2020-11-17",
+      "status": true,
+      "id_user": 1
+    },
+    {
+      "id": 3,
+      "nome_tarefa": "Comer muito",
+      "nome_categoria": "Aula",
+      "descricao": "",
+      "data_inicio": "2020-11-17",
+      "prazo": "2020-12-18",
+      "id_user": 1
+    },
+    {
+      "id_user": 2,
       "nome_categoria": "Minha primeira categoria",
       "nome_tarefa": "Criar minha primeria tarefa",
       "descricao": "Tenho que criar minha primeira tarefa",
       "data_inicio": "2020-11-17",
       "prazo": "2020-11-18",
       "status": false,
-      "id": 1
+      "id": 4
     }
   ]
 }

@@ -20,14 +20,31 @@
     align-items: center;
 }
 
-.separadorVertical {
-    border-left: 1px solid #c2185b;
-}
-
 .links {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .tituloLogin{
     padding: 20px;
+}
+
+.appDemo{
+    background-color: #363636 !important;
+}
+
+@media(max-width: 660px){
+    .appDemo{
+        background-color: #303030 !important;
+    }
+    .tituloLogin{
+        padding: 0px;
+    }
+    .separadorVertical h2{
+        display: none;
+    }
+    .separadorVertical{
+        position: relative;
+        top: -50px;
+        border-left: transparent;
+    }
 }

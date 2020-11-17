@@ -19,7 +19,9 @@ export class TaskControlService {
     })
   }
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(
+    private http: HttpClient, 
+    ) { }
 
   // Controle de categorias
   carregarCategorias(): Observable<Category>{

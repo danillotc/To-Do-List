@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { AddComponent } from '../../components/addCategoria/add.component';
+import { AddComponent } from '../../components/add-categoria/add.component';
 
 import * as $ from 'jquery'
 import { TaskControlService } from 'src/app/services/task-control.service';
@@ -119,7 +119,7 @@ export class HomeComponent implements OnInit {
 
     setInterval(()=>{
       this.mudarContraste();
-    },500)
+    },200)
 
     this.verificarAutentificacao();
   }
