@@ -33,6 +33,8 @@ export class AddUserComponent implements OnInit {
 
   criarUsuario() {
 
+    var dateObj = new Date();
+
     this.taskService.criarUsuario(this.newUser).subscribe(data=>console.log(''));
 
     this.taskService.carregarUsuarios().subscribe(data=>{
@@ -44,8 +46,8 @@ export class AddUserComponent implements OnInit {
         "nome_categoria": "Minha primeira categoria",
         "nome_tarefa": "Criar minha primeria tarefa",
         "descricao": "Tenho que criar minha primeira tarefa",
-        "data_inicio": "2015-01-12",
-        "prazo": "2015-02-12",
+        "data_inicio": `${dateObj.getUTCFullYear()}-${dateObj.getMonth()}-${dateObj.getDate()}`,
+        "prazo": `${dateObj.getUTCFullYear()}-${dateObj.getMonth()}-${(dateObj.getDate() + 1)}`,
         "status": false
       }).subscribe(data=>console.log(''))
 
