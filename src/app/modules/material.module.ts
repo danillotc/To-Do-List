@@ -16,6 +16,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { A11yModule } from '@angular/cdk/a11y';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
     exports: [
@@ -34,7 +35,8 @@ import { MatMenuModule } from '@angular/material/menu';
         MatSlideToggleModule,
         A11yModule,
         MatCheckboxModule,
-        MatMenuModule
+        MatMenuModule,
+        MatTooltipModule
     ]
 })
 

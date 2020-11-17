@@ -7,49 +7,49 @@
     <mat-form-field class="example-form-field example-full-width" color="accent">
         <mat-label>Categoria</mat-label>
 
-        <mat-select #select required>
-            <mat-option *ngFor="let categories of categoriesList" value="{{categories}}">
+        <mat-select #select required aria-label="Selecione uma categoria">
+            <mat-option aria-label="Selecionar {{categories}}" *ngFor="let categories of categoriesList" value="{{categories}}">
                 {{categories}}
             </mat-option>
-            <mat-option value='Nova categoria'>Criar uma nova categoria</mat-option>
+            <mat-option aria-label="Selecionar nova categoria" value='Nova categoria'>Criar uma nova categoria</mat-option>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field *ngIf="select.value == 'Nova categoria'" class="example-full-width" color="accent" >
-        <input required autocomplete="off" matInput type="text" placeholder="Nome da categoria" [(ngModel)]="newCategory.nome_categoria" name="nome_categoria">
+        <input aria-label="Digite o nome da categoria" required autocomplete="off" matInput type="text" placeholder="Nome da categoria" [(ngModel)]="newCategory.nome_categoria" name="nome_categoria">
     </mat-form-field>
 
     <br>
 
     <mat-form-field class="example-full-width" color="accent">
-        <input required autocomplete="off" matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa" name="nome_tarefa">
+        <input aria-label="Digite o nome da tarefa" required autocomplete="off" matInput type="text" placeholder="Nome da tarefa" [(ngModel)]="newCategory.nome_tarefa" name="nome_tarefa">
     </mat-form-field>
 
     <mat-form-field class="example-full-width" color="accent">
-        <textarea autocomplete="off" matInput type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao" name="descricao"> </textarea>
-    </mat-form-field>
-
-    <br>
-
-    <mat-form-field class="example-full-width" color="accent">
-        <input autocomplete="off" matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio" name="data_inicio">
+        <textarea aria-label="Digite uma descrição da tarefa" autocomplete="off" matInput type="text" placeholder="Descrição" [(ngModel)]="newCategory.descricao" name="descricao"> </textarea>
     </mat-form-field>
 
     <br>
 
     <mat-form-field class="example-full-width" color="accent">
-        <input autocomplete="off" matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
+        <input aria-label="Digite uma data de início da tarefa" autocomplete="off" matInput type="date" placeholder="Data de início" [(ngModel)]="newCategory.data_inicio" name="data_inicio">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field class="example-full-width" color="accent">
+        <input aria-label="Digite uma data final" autocomplete="off" matInput type="date" placeholder="Data final" [(ngModel)]="newCategory.prazo" name="prazo">
     </mat-form-field>
 
     <mat-form-field class="example-full-width" color="accent">
-        <textarea autocomplete="off" matInput type="text" placeholder="Anotações" [(ngModel)]="newCategory.outros" name="outros"> </textarea>
+        <textarea aria-label="Digite uma anotação na tarefa" autocomplete="off" matInput type="text" placeholder="Anotações" [(ngModel)]="newCategory.outros" name="outros"> </textarea>
     </mat-form-field>
 
     <br>
 
     <mat-dialog-actions>
-        <button class="mat-raised-button mat-primary" type="submit">Criar tarefa</button>
-        <button class="mat-raised-button" id="closeButton" (click)="fechar()">Cancelar</button>
+        <button aria-label="Botão de criar tarefa" class="mat-raised-button mat-primary" type="submit">Criar tarefa</button>
+        <button aria-label="Botão de cancelar" class="mat-raised-button" id="closeButton" (click)="fechar()">Cancelar</button>
     </mat-dialog-actions>
     
 </form>

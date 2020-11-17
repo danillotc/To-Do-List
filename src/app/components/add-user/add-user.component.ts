@@ -22,7 +22,7 @@ export class AddUserComponent implements OnInit {
     private dialogRef: MatDialogRef<AddUserComponent>,
     private taskService: TaskControlService,
     private toastr: ToastrService,
-    ) { 
+  ) {
     this.newUser.id;
     this.newUser.username = '';
     this.newUser.password = '';
@@ -34,10 +34,15 @@ export class AddUserComponent implements OnInit {
   criarUsuario() {
 
     var dateObj = new Date();
+    var month = dateObj.getMonth()+1; //months from 1-12
+    var day = dateObj.getUTCDate();
+    var year = dateObj.getUTCFullYear();
+    var data_inicio = year + "-" + month + "-" + day;
+    var prazo = day == 31 ? year + "-" + month + "-" + 1 : year + "-" + month + "-" + (day + 1);
 
-    this.taskService.criarUsuario(this.newUser).subscribe(data=>console.log(''));
+    this.taskService.criarUsuario(this.newUser).subscribe(data => console.log(''));
 
-    this.taskService.carregarUsuarios().subscribe(data=>{
+    this.taskService.carregarUsuarios().subscribe(data => {
       this.usuarios = data;
       this.userId = this.usuarios.slice(-1)[0];
 
@@ -46,10 +51,10 @@ export class AddUserComponent implements OnInit {
         "nome_categoria": "Minha primeira categoria",
         "nome_tarefa": "Criar minha primeria tarefa",
         "descricao": "Tenho que criar minha primeira tarefa",
-        "data_inicio": `${dateObj.getUTCFullYear()}-${dateObj.getMonth()}-${dateObj.getDate()}`,
-        "prazo": `${dateObj.getUTCFullYear()}-${(dateObj.getMonth() + 1)}-${(dateObj.getDate() + 1)}`,
+        "data_inicio": `${data_inicio}`,
+        "prazo": `${prazo}`,
         "status": false
-      }).subscribe(data=>console.log(''))
+      }).subscribe(data => console.log(''))
 
     })
 
