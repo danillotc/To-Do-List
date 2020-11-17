@@ -1,7 +1,23 @@
-mat-grid-list {
+.externalContainer {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+}
+
+.internalContainer {
+    width: 100vw;
+    height: 100vh;
     background-color: #303030;
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.component {
+    display: flex;
+    align-items: center;
 }
 
 .separadorVertical {
