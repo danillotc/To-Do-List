@@ -16,14 +16,10 @@ export class FiltroPipe implements PipeTransform {
 }
 
 @Pipe({
-  name: 'filtroTarefas'
+  name: 'filtrarData'
 })
-export class FiltroTarefas{
-  transform(value: any, input: any): any {
-    if (input) {
-       return value.filter(val => val.indexOf(input) >= 0);
-     } else {
-       return value;
-     }
+export class DateFiltro{
+  transform(value: any): any {
+      return `${value.split('-')[2]}/${value.split('-')[1]}/${value.split('-')[0]}`;
     }
 }

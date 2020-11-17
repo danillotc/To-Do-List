@@ -32,6 +32,7 @@ export class EditComponent implements OnInit {
     this.newCategory.descricao = data.descricao;
     this.newCategory.data_inicio = data.data_inicio;
     this.newCategory.prazo = data.prazo;
+    this.newCategory.outros = data.outros;
   }
 
   ngOnInit(): void {

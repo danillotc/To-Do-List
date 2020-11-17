@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
 
   categoriaPesquisada = '';
   isChecked;
-  acessibilidadeStatus;
   usuario;
   userId = document.cookie.split('token=')[1];
 
@@ -27,74 +26,68 @@ export class HomeComponent implements OnInit {
   ) { }
 
   mudarContraste() {
-    setTimeout(() => {
-      
-      setInterval(()=>{
-        if (this.isChecked) {
-          document.querySelectorAll('h1').forEach(element => {
-            element.style.color = 'yellow';
-          })
-          document.querySelectorAll('h2').forEach(element => {
-            element.style.color = 'yellow';
-          })
-          document.querySelectorAll('input').forEach(element => {
-            element.style.color = 'yellow';
-          })
-          document.querySelectorAll('span').forEach(element => {
-            element.style.color = 'yellow';
-          })
-          document.querySelectorAll('textarea').forEach(element => {
-            element.style.color = 'yellow';
-          })
-          $('mat-icon').css('color', 'black');
-          $('#btnSair').css('color', 'white');
-    
-          document.getElementById('menu').style.color = 'yellow';
-          document.getElementById('adicionarTarefa').style.color = '';
-          document.getElementById('filtraTarefa').style.color = '';
-    
-          $('.mat-toolbar.mat-primary').css({
-            'box-shadow': '#ffff',
-            'background': 'black',
-            'color': '#fff'
-          });
-          $('.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background, .mat-checkbox-checked.mat-warn .mat-checkbox-background').css({
-            'background-color': 'rgb(221, 29, 221)'
-          });
-          $(`.concluido`).addClass('concluidoContraste');
-    
-        } else {        
-          document.querySelectorAll('h1').forEach(element => {
-            element.style.color = '';
-          })
-          document.querySelectorAll('h2').forEach(element => {
-            element.style.color = '';
-          })
-          document.querySelectorAll('input').forEach(element => {
-            element.style.color = '';
-          })
-          document.querySelectorAll('span').forEach(element => {
-            element.style.color = '';
-          })
-          document.querySelectorAll('textarea').forEach(element => {
-            element.style.color = '';
-          })
-          document.getElementById('menu').style.color = 'white';
-          document.getElementById('btnSair').style.color = '';
-          $('.mat-toolbar.mat-primary').css({
-            'box-shadow': '#ffff',
-            'background': '#c2185b',
-            'color': 'white'
-          });
-          $('.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background, .mat-checkbox-checked.mat-warn .mat-checkbox-background').css({
-            'background-color': 'rgb(45, 214, 45)'
-          });
-          $(`.concluidoContraste`).addClass('concluido');
-          $(`.concluidoContraste`).removeClass('concluidoContraste');
-        }
+    if (this.isChecked == true) {
+      document.querySelectorAll('h1').forEach(element => {
+        element.style.color = 'yellow';
       })
+      document.querySelectorAll('h2').forEach(element => {
+        element.style.color = 'yellow';
+      })
+      document.querySelectorAll('input').forEach(element => {
+        element.style.color = 'yellow';
+      })
+      document.querySelectorAll('span').forEach(element => {
+        element.style.color = 'yellow';
+      })
+      document.querySelectorAll('textarea').forEach(element => {
+        element.style.color = 'yellow';
+      })
+      $('mat-icon').css('color', 'black');
+      $('#btnSair').css('color', 'white');
 
-    }, 200);
+      document.getElementById('menu').style.color = 'yellow';
+      document.getElementById('adicionarTarefa').style.color = '';
+      document.getElementById('filtraTarefa').style.color = '';
+
+      $('.mat-toolbar.mat-primary').css({
+        'box-shadow': '#ffff',
+        'background': 'black',
+        'color': '#fff'
+      });
+      $('.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background, .mat-checkbox-checked.mat-warn .mat-checkbox-background').css({
+        'background-color': 'rgb(221, 29, 221)'
+      });
+      $(`.concluido`).addClass('concluidoContraste');
+
+    } else {        
+      document.querySelectorAll('h1').forEach(element => {
+        element.style.color = '';
+      })
+      document.querySelectorAll('h2').forEach(element => {
+        element.style.color = '';
+      })
+      document.querySelectorAll('input').forEach(element => {
+        element.style.color = '';
+      })
+      document.querySelectorAll('span').forEach(element => {
+        element.style.color = '';
+      })
+      document.querySelectorAll('textarea').forEach(element => {
+        element.style.color = '';
+      })
+      document.getElementById('menu').style.color = 'white';
+      document.getElementById('btnSair').style.color = '';
+      $('.mat-toolbar.mat-primary').css({
+        'box-shadow': '#ffff',
+        'background': '#c2185b',
+        'color': 'white'
+      });
+      $('.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background, .mat-checkbox-checked.mat-warn .mat-checkbox-background').css({
+        'background-color': 'rgb(45, 214, 45)'
+      });
+      $(`.concluidoContraste`).addClass('concluido');
+      $(`.concluidoContraste`).removeClass('concluidoContraste');
+    }
   }
 
   abrirModalAdd() {
@@ -107,8 +100,8 @@ export class HomeComponent implements OnInit {
   verificarAutentificacao(){
     const idUsuario = document.cookie.split('token=')[1];
 
-    if(idUsuario == '0'){
-      this.router.navigate(['/'])
+    if(idUsuario == '0' || idUsuario == undefined){
+      this.router.navigate(['/login'])
     }else{
       this.taskControl.carregarUsuariosPorId(parseInt(idUsuario)).subscribe(data => {
         this.usuario = data.username
@@ -122,7 +115,11 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.mudarContraste();
+
+    setInterval(()=>{
+      this.mudarContraste();
+    },500)
+
     this.verificarAutentificacao();
   }
 

@@ -1,0 +1,21 @@
+<div class="dragDrop">
+    <div cdkDropList (cdkDropListDropped)="drop($event)">
+        <h1 align="center">Coisas para fazer no dia de hoje</h1>
+        <div cdkDrag *ngFor="let item of movies">
+            <div class="example-list" (dblclick)="abrirModalDetalhes(item)">
+                <div class="example-box">
+                    <h3>{{item}}</h3>
+                    <div class="icones">
+                        <button mat-icon-button class="example-icon favorite-icon"
+                            aria-label="Example icon-button with heart icon" (click)="abrirModalEdit(item)">
+                            <mat-icon aria-label="Botão para editar tarefa">create</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<mat-dialog-actions align="center">
+    <button aria-label="Botão para sair da tela de detalhes" mat-raised-button color="primary" (click)="fechar()">Sair</button>
+</mat-dialog-actions>

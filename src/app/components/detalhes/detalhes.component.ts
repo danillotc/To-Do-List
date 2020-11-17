@@ -34,7 +34,7 @@ export class DetalhesComponent implements OnInit {
         this.newCategory.data_inicio = data.data_inicio;
         this.newCategory.prazo = data.prazo;
         this.newCategory.status = data.status;
-        console.log(data)
+        this.newCategory.outros = data.outros;
       }catch{}
   }
 
@@ -42,7 +42,6 @@ export class DetalhesComponent implements OnInit {
   }
 
   atualizarStatusTarefa(){
-
     this.newCategory.id_user = parseInt(document.cookie.split('token=')[1]);
 
     setTimeout(() => {

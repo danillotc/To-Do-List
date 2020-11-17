@@ -19,10 +19,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ToastrModule } from 'ngx-toastr';
 
-import { FiltroPipe, FiltroTarefas } from './pipe/filtro.pipe';
+import { FiltroPipe, DateFiltro } from './pipe/filtro.pipe';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { DetalhesComponent } from './components/detalhes/detalhes.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
+import { DemoComponent } from './components/demo/demo.component';
+import { DemoDialogComponent } from './components/demo-dialog/demo-dialog.component';
+import { DemoDialogEditComponent } from './components/demo-dialog-edit/demo-dialog-edit.component';
+import { DemoDialogDetalhesComponent } from './components/demo-dialog-detalhes/demo-dialog-detalhes.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { ForgotComponent } from './components/forgot/forgot.component';
     AddUserComponent,
     DetalhesComponent,
     ForgotComponent,
-    FiltroTarefas
+    DateFiltro,
+    DemoComponent,
+    DemoDialogComponent,
+    DemoDialogEditComponent,
+    DemoDialogDetalhesComponent
   ],
   imports: [
     BrowserModule,

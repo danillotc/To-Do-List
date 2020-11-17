@@ -5,7 +5,7 @@ mat-grid-list {
 }
 
 .separadorVertical {
-    border-left: solid #c2185b;
+    border-left: 1px solid #c2185b;
 }
 
 .links {

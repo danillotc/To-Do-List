@@ -9,6 +9,11 @@
       "username": "luan",
       "password": "123",
       "id": 1
+    },
+    {
+      "username": "sabrina",
+      "password": "luan",
+      "id": 2
     }
   ],
   "tarefas": [
@@ -45,6 +50,33 @@
       "id_user": 1,
       "nome_categoria": "teste",
       "id": 4
+    },
+    {
+      "id": 6,
+      "nome_tarefa": "Criar minha primeira tarefa",
+      "nome_categoria": "Minha primeira categoria",
+      "descricao": "Tenho que criar minha primeira tarefa",
+      "data_inicio": "2015-01-12",
+      "prazo": "2015-02-12",
+      "status": true,
+      "outros": "asdasdasdasd",
+      "id_user": 2
+    },
+    {
+      "id": 7,
+      "nome_tarefa": "Comer",
+      "nome_categoria": "Minha primeira categoria",
+      "descricao": "Tenho que comer comida",
+      "status": true,
+      "id_user": 1
+    },
+    {
+      "id": 8,
+      "nome_tarefa": "Correr",
+      "nome_categoria": "Minha primeira categoria",
+      "prazo": "2020-11-19",
+      "status": true,
+      "id_user": 1
     }
   ]
 }

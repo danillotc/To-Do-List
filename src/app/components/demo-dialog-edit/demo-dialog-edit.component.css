@@ -16,15 +16,5 @@
 }
   
 .example-full-width {
-width: 100%;
-}
-
-.checkConcluido{
-    position: relative;
-    top: 7px;
-    float: right;
-}
-
-.detalhes h3{
-    display: inline;
+    width: 100%;
 }
