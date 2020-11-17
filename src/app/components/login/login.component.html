@@ -1,41 +1,43 @@
-    <div class="externalContainer">
+<div class="externalContainer">
 
-        <div class="internalContainer" fxFlex fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
-            <div class="component" fxFlex="70" fxLayoutAlign="space-around center">
-                <app-demo></app-demo>
-            </div>
-    
-            <div fxFlex class="separadorVertical component">
-                <form>
+    <div class="internalContainer" fxFlex fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+        <div class="component" fxFlex="70" fxLayoutAlign="space-around center">
+            <app-demo></app-demo>
+        </div>
+
+        <div fxFlex class="separadorVertical component">
+            <form>
+                <div>
                     <h1>Task Manager</h1>
-    
+
                     <br>
-    
+
                     <h2>Faça login e experencie uma nova forma de organizar seu dia-a-dia</h2>
                     <br>
-    
-                    <mat-form-field style="width: 309px;" color="accent" class="example-form-field example-full-width">
-                        <mat-label>Usuário</mat-label>
-                        <input name="username" autocomplete="off" matInput [(ngModel)]="user.username">
-                    </mat-form-field>
-                    <br>
-    
-                    <mat-form-field style="width: 309px;" color="accent" class="example-form-field example-full-width">
-                        <mat-label>Senha</mat-label>
-                        <input name="password" type="password" matInput [(ngModel)]="user.password">
-                    </mat-form-field>
-                    <br>
-    
-                    <button mat-raised-button color="primary" (click)="login()">Entrar</button>
-                    <br>
-    
-                    <div class="links">
-                        <button mat-stroked-button color="basic" (click)="abrirModalAddUser()">Cadastrar novo
-                            usuário</button>
-                        <br><br>
-                        <button mat-stroked-button color="basic" (click)="abrirModalEsqueci()">Esqueci minha senha</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+
+                <mat-form-field style="width: 309px;" color="accent" class="example-form-field example-full-width">
+                    <mat-label>Usuário</mat-label>
+                    <input name="username" autocomplete="off" matInput [(ngModel)]="user.username">
+                </mat-form-field>
+                <br>
+
+                <mat-form-field style="width: 309px;" color="accent" class="example-form-field example-full-width">
+                    <mat-label>Senha</mat-label>
+                    <input name="password" type="password" matInput [(ngModel)]="user.password">
+                </mat-form-field>
+                <br>
+
+                <button mat-raised-button color="primary" (click)="login()">Entrar</button>
+                <br>
+
+                <div class="links">
+                    <button mat-stroked-button color="basic" (click)="abrirModalAddUser()">Cadastrar novo
+                        usuário</button>
+                    <br><br>
+                    <button mat-stroked-button color="basic" (click)="abrirModalEsqueci()">Esqueci minha senha</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>

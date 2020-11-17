@@ -51,7 +51,7 @@ export class AddUserComponent implements OnInit {
 
     })
 
-    this.toastr.success("Usuario " + this.newUser.username + " criado com sucesso!");
+    this.toastr.success("Usuario " + this.newUser.username + "criado com sucesso!");
 
     setTimeout(() => {
       location.reload();

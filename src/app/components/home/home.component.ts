@@ -44,10 +44,9 @@ export class HomeComponent implements OnInit {
       })
       $('mat-icon').css('color', 'black');
       $('#btnSair').css('color', 'white');
-
+      $('#detalhes').css('color','yellow');
       document.getElementById('menu').style.color = 'yellow';
       document.getElementById('adicionarTarefa').style.color = '';
-      document.getElementById('filtraTarefa').style.color = '';
 
       $('.mat-toolbar.mat-primary').css({
         'box-shadow': '#ffff',
@@ -77,6 +76,7 @@ export class HomeComponent implements OnInit {
       })
       document.getElementById('menu').style.color = 'white';
       document.getElementById('btnSair').style.color = '';
+      $('#detalhes').css('color','');
       $('.mat-toolbar.mat-primary').css({
         'box-shadow': '#ffff',
         'background': '#c2185b',

@@ -13,7 +13,7 @@
 <form>
 
     <div color="accent" class="example-full-width detalhes">
-        <h3>
+        <h3 id="detalhes">
             <h3>Você tem que {{newCategory.nome_tarefa}}</h3>
             <h3 *ngIf="newCategory.descricao != undefined">, ou seja, {{newCategory.descricao}}</h3>
             <h3 *ngIf="newCategory.data_inicio != undefined && newCategory.data_inicio != ''">, no dia {{newCategory.data_inicio | filtrarData}}</h3>
