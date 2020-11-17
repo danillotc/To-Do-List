@@ -47,7 +47,7 @@ export class AddUserComponent implements OnInit {
         "nome_tarefa": "Criar minha primeria tarefa",
         "descricao": "Tenho que criar minha primeira tarefa",
         "data_inicio": `${dateObj.getUTCFullYear()}-${dateObj.getMonth()}-${dateObj.getDate()}`,
-        "prazo": `${dateObj.getUTCFullYear()}-${dateObj.getMonth()}-${(dateObj.getDate() + 1)}`,
+        "prazo": `${dateObj.getUTCFullYear()}-${(dateObj.getMonth() + 1)}-${(dateObj.getDate() + 1)}`,
         "status": false
       }).subscribe(data=>console.log(''))
 
